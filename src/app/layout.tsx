@@ -17,9 +17,9 @@ const redHatDisplay = Red_Hat_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Quantsuite — Trade Beyond Human Limits",
+  title: "Quantsuite — Autonomous Trading Intelligence",
   description:
-    "Market system intelligence for autonomous hedge funds. AI-powered trading infrastructure built for quants, traders, and visionaries.",
+    "AI-powered market system intelligence for autonomous hedge funds. SwarmEngine, Factor Zoo, Walk-Forward Backtester, and real-time regime detection.",
   keywords: [
     "quantitative trading",
     "algorithmic trading",
@@ -29,22 +29,23 @@ export const metadata: Metadata = {
     "backtesting",
     "SwarmEngine",
     "market intelligence",
+    "factor models",
   ],
   authors: [{ name: "Quantsuite" }],
   creator: "Quantsuite",
   openGraph: {
-    title: "Quantsuite — Trade Beyond Human Limits",
+    title: "Quantsuite — Autonomous Trading Intelligence",
     description:
-      "Market system intelligence for autonomous hedge funds. AI-powered trading infrastructure.",
+      "AI-powered market system intelligence for autonomous hedge funds.",
     type: "website",
     locale: "en_US",
     siteName: "Quantsuite",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Quantsuite — Trade Beyond Human Limits",
+    title: "Quantsuite — Autonomous Trading Intelligence",
     description:
-      "Market system intelligence for autonomous hedge funds. AI-powered trading infrastructure.",
+      "AI-powered market system intelligence for autonomous hedge funds.",
   },
   robots: "index, follow",
 };
