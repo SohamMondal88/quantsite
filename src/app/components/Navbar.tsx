@@ -34,52 +34,58 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
           scrolled || menuOpen
-            ? "bg-[#060606]/80 backdrop-blur-[20px] border-b border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+            ? "bg-[#050505]/80 backdrop-blur-[24px] border-b border-border-subtle"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto py-4 px-5 sm:px-8 lg:px-16 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto py-3.5 sm:py-4 px-5 sm:px-8 lg:px-16 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2.5 sm:gap-3 animate-fadeInDown">
-            <div
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-white font-bold text-sm transition-all duration-500 hover:shadow-[0_0_20px_rgba(59,176,120,0.4)] hover:scale-105"
-              style={{
-                background: "linear-gradient(135deg, #3bb078 0%, #ffdb65 100%)",
-              }}
-            >
-              Q
+            {/* System status dot */}
+            <div className="relative">
+              <div
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                style={{
+                  background: "linear-gradient(135deg, #3bb078 0%, #00f0ff 100%)",
+                }}
+              >
+                Q
+              </div>
+              <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-accent-green border-2 border-bg animate-pulse-glow" />
             </div>
-            <span className="font-sans font-semibold text-[22px] sm:text-[28px] md:text-[32px] text-white tracking-tight">
-              Quantsuite
-            </span>
+            <div className="flex flex-col">
+              <span className="font-sans font-semibold text-[20px] sm:text-[26px] md:text-[32px] text-white tracking-tight leading-none">
+                Quantsuite
+              </span>
+              <span className="font-mono text-[8px] sm:text-[9px] tracking-[0.15em] text-accent-cyan/60 uppercase leading-none mt-0.5 hidden sm:block">
+                Autonomous Intelligence
+              </span>
+            </div>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="hidden md:flex items-center gap-1 lg:gap-2">
             {navLinks.map((link, i) => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`group relative font-sans font-semibold text-[15px] lg:text-[17px] xl:text-[19px] text-white/90 hover:text-white transition-colors duration-300 animate-fadeInDown delay-${(i + 1) * 100}`}
+                className={`group relative px-3 lg:px-4 py-2 rounded-lg font-sans font-medium text-[13px] lg:text-[14px] text-text-secondary hover:text-white transition-all duration-300 hover:bg-white/5 animate-fadeInDown delay-${(i + 1) * 100}`}
               >
                 {link.label}
-                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-linear-to-r from-accent-cyan to-accent-green transition-all duration-500 group-hover:w-full rounded-full" />
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] w-0 bg-accent-cyan rounded-full transition-all duration-300 group-hover:w-1/2" />
               </a>
             ))}
 
             <a
               href="#discord"
-              className="group ml-2 px-5 py-2.5 lg:px-6 lg:py-3 rounded-xl font-sans font-bold text-[14px] lg:text-[16px] xl:text-[18px] text-white transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,176,120,0.25)] hover:border-white/20 animate-fadeInDown delay-400"
+              className="group ml-2 px-4 lg:px-5 py-2.5 rounded-lg font-sans font-semibold text-[13px] lg:text-[14px] text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.15)] border border-border-medium hover:border-accent-cyan/30 animate-fadeInDown delay-400"
               style={{
-                background: "rgba(59, 176, 120, 0.17)",
-                border: "1px solid rgba(255,255,255,0.1)",
+                background: "linear-gradient(135deg, rgba(0,240,255,0.08) 0%, rgba(59,176,120,0.06) 100%)",
               }}
             >
-              <span className="flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse-glow" />
                 Join Discord
-                <svg className="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                </svg>
               </span>
             </a>
           </div>
@@ -87,35 +93,35 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative z-50 p-2 text-white"
+            className="md:hidden relative z-50 p-2 text-white rounded-lg hover:bg-white/5 transition-colors"
             aria-label="Toggle menu"
           >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`block h-0.5 bg-current rounded-full transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[9px]" : ""}`} />
-              <span className={`block h-0.5 bg-current rounded-full transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`block h-0.5 bg-current rounded-full transition-all duration-300 ${menuOpen ? "-rotate-45 translate-y-[-9px]" : ""}`} />
+            <div className="w-5 h-4 flex flex-col justify-between">
+              <span className={`block h-[1.5px] bg-current rounded-full transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+              <span className={`block h-[1.5px] bg-current rounded-full transition-all duration-300 ${menuOpen ? "opacity-0 translate-x-2" : ""}`} />
+              <span className={`block h-[1.5px] bg-current rounded-full transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
             </div>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Overlay Menu */}
+      {/* Mobile Overlay */}
       <div
         className={`fixed inset-0 z-40 md:hidden transition-all duration-500 ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="absolute inset-0 bg-[#060606]/95 backdrop-blur-xl" onClick={() => setMenuOpen(false)} />
-        <div className="relative h-full flex flex-col items-center justify-center gap-8 px-6">
+        <div className="absolute inset-0 bg-[#050505]/95 backdrop-blur-[30px]" onClick={() => setMenuOpen(false)} />
+        <div className="relative h-full flex flex-col items-center justify-center gap-2 px-6">
           {navLinks.map((link, i) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className={`font-serif text-[32px] sm:text-[40px] text-white hover:text-accent-cyan transition-colors duration-300 ${
+              className={`font-serif text-[36px] sm:text-[44px] text-white/90 hover:text-accent-cyan transition-colors duration-300 py-2 ${
                 menuOpen ? "animate-fadeInUp" : ""
               }`}
-              style={{ animationDelay: `${(i + 1) * 100}ms` }}
+              style={{ animationDelay: `${(i + 1) * 80}ms` }}
             >
               {link.label}
             </a>
@@ -123,16 +129,18 @@ export default function Navbar() {
           <a
             href="#discord"
             onClick={() => setMenuOpen(false)}
-            className={`mt-4 px-8 py-4 rounded-2xl font-sans font-bold text-[18px] text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,176,120,0.3)] ${
+            className={`mt-6 px-8 py-3.5 rounded-xl font-sans font-semibold text-[16px] text-white border border-border-medium hover:border-accent-cyan/40 transition-all duration-300 ${
               menuOpen ? "animate-fadeInUp" : ""
             }`}
             style={{
-              background: "rgba(59, 176, 120, 0.2)",
-              border: "1px solid rgba(255,255,255,0.15)",
-              animationDelay: "400ms",
+              background: "linear-gradient(135deg, rgba(0,240,255,0.1) 0%, rgba(59,176,120,0.08) 100%)",
+              animationDelay: "320ms",
             }}
           >
-            Join Discord
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-accent-green" />
+              Join Discord
+            </span>
           </a>
         </div>
       </div>

@@ -1,204 +1,158 @@
-"use client";
-
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-32">
-      {/* Floating decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Rectangle 125 - top right gradient */}
-        <div
-          className="absolute animate-float-slow hidden sm:block"
-          style={{
-            right: "-5%",
-            top: "1%",
-            width: "34%",
-            height: "8%",
-            background:
-              "linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 100%)",
-            borderRadius: "8px",
-          }}
-        />
-
-        {/* Rectangle 127 - decorative near dashboard */}
-        <div
-          className="absolute animate-float delay-200 hidden md:block"
-          style={{
-            right: "15%",
-            top: "7%",
-            width: "32%",
-            height: "7%",
-            background:
-              "linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 100%)",
-            borderRadius: "19px",
-            transform: "rotate(-2deg)",
-            animationDelay: "0.5s",
-          }}
-        />
-
-        {/* Glowing dot accents - hidden on very small screens */}
-        <div
-          className="absolute rounded-full animate-glow-pulse hidden sm:block"
-          style={{
-            left: "8%",
-            top: "18%",
-            width: 8,
-            height: 8,
-            background: "rgba(76, 255, 255, 0.9)",
-            boxShadow: "0 0 20px rgba(76,255,255,0.6), 0 0 60px rgba(76,255,255,0.2)",
-          }}
-        />
-        <div
-          className="absolute rounded-full animate-glow-pulse-green delay-300 hidden lg:block"
-          style={{
-            right: "12%",
-            top: "32%",
-            width: 6,
-            height: 6,
-            background: "rgba(59, 176, 120, 0.9)",
-            boxShadow: "0 0 20px rgba(59,176,120,0.6), 0 0 60px rgba(59,176,120,0.2)",
-          }}
-        />
-        <div
-          className="absolute rounded-full animate-glow-pulse delay-500 hidden md:block"
-          style={{
-            left: "20%",
-            top: "45%",
-            width: 10,
-            height: 10,
-            background: "rgba(255, 219, 101, 0.8)",
-            boxShadow: "0 0 20px rgba(255,219,101,0.5), 0 0 60px rgba(255,219,101,0.15)",
-          }}
-        />
+    <section className="relative w-full overflow-hidden pt-24 sm:pt-28 md:pt-32 lg:pt-40">
+      {/* Subtle corner accents */}
+      <div className="absolute top-20 left-8 hidden lg:block">
+        <div className="font-mono text-[10px] tracking-[0.2em] text-text-muted uppercase mb-2">
+          System v4.2.1
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse-glow" />
+          <span className="font-mono text-[10px] text-accent-green">OPERATIONAL</span>
+        </div>
       </div>
 
-      <div className="relative max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-8 pt-4 sm:pt-8">
+      <div className="relative max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-8">
+        {/* Eyebrow */}
+        <div className="flex items-center gap-3 mb-4 sm:mb-6 animate-fadeInUp">
+          <div className="h-[1px] w-8 sm:w-12 bg-gradient-to-r from-accent-cyan to-transparent" />
+          <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] text-accent-cyan uppercase">
+            Autonomous Trading Infrastructure
+          </span>
+        </div>
+
         {/* Hero Text with Green Dot */}
-        <div className="flex items-start gap-3 sm:gap-4 mb-4 animate-slideInUp">
+        <div className="flex items-start gap-3 sm:gap-4 mb-5 sm:mb-6 animate-slideInUp">
           <div className="flex-1 min-w-0">
             <h1
-              className="font-serif text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] xl:text-[104px] font-normal leading-[1.1] sm:leading-[1.12] tracking-normal animate-text-glow"
+              className="font-serif text-[36px] sm:text-[48px] md:text-[72px] lg:text-[96px] xl:text-[120px] font-normal leading-[1.05] sm:leading-[1.08] tracking-tight"
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(76,255,255,0.56) 0%, rgba(129,255,227,1) 31%, rgba(149,255,216,1) 44%, rgba(0,255,163,1) 100%)",
+                background: "linear-gradient(135deg, #ffffff 0%, #00f0ff 35%, #3bb078 70%, #ffffff 100%)",
+                backgroundSize: "200% auto",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                textShadow: "0 0 80px rgba(76, 255, 255, 0.2)",
+                animation: "textShimmer 6s linear infinite",
               }}
             >
               Trade Beyond
               <br />
               Human Limits
-              <br />
-              <span className="hidden sm:inline">on Quantsuite</span>
-              <span className="sm:hidden">on Quantsuite</span>
             </h1>
           </div>
 
-          {/* Green Dot - Ellipse 13 */}
+          {/* Green Dot accent */}
           <div
-            className="hidden lg:block mt-6 xl:mt-8 shrink-0 animate-scaleIn delay-300"
-            style={{ width: 51, height: 51 }}
+            className="hidden lg:block mt-4 xl:mt-8 shrink-0 animate-scaleIn delay-300"
+            style={{ width: 44, height: 44 }}
           >
             <div
               className="w-full h-full rounded-full transition-transform duration-500 hover:scale-110"
               style={{
-                background: "linear-gradient(135deg, #3bb078 0%, #8fbfb8 100%)",
-                border: "15px solid rgba(207, 217, 212, 0.2)",
-                boxSizing: "border-box",
-                boxShadow: "0 0 30px rgba(59,176,120,0.3)",
+                background: "linear-gradient(135deg, #3bb078 0%, #00f0ff 100%)",
+                boxShadow: "0 0 30px rgba(59,176,120,0.3), 0 0 60px rgba(0,240,255,0.1)",
               }}
             />
           </div>
         </div>
 
-        {/* Subtitle in glassmorphism frame */}
-        <div
-          className="relative mb-6 sm:mb-8 inline-block glass-card animate-fadeInUp delay-200 w-full sm:w-auto"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            borderRadius: "16px",
-            padding: "24px 20px",
-            maxWidth: "100%",
-          }}
-        >
-          <p className="font-sans text-[15px] sm:text-[18px] md:text-[22px] lg:text-[25px] text-white/90 max-w-xl leading-[1.32]">
-            QuantSuite is your AI powered edge in the markets built for quants,
-            traders, and visionaries
+        {/* Subtitle */}
+        <div className="max-w-xl mb-6 sm:mb-8 animate-fadeInUp delay-200">
+          <p className="font-sans text-[15px] sm:text-[17px] md:text-[20px] lg:text-[22px] text-text-secondary leading-[1.5]">
+            AI-powered market intelligence for autonomous hedge funds.
+            Built for quants, traders, and visionaries who demand the edge.
           </p>
         </div>
 
-        {/* Launch Now Button */}
-        <a
-          href="#launch"
-          className="group inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-2xl launch-btn text-white font-bold text-[16px] sm:text-[18px] md:text-[24px] lg:text-[30px] transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,187,0,0.35)] hover:-translate-y-1 animate-fadeInUp delay-400"
-          style={{
-            boxShadow:
-              "0 0 83px 29px rgba(255,187,0,0.23), 0 4px 68px 23px rgba(255,187,0,0.07)",
-            animationDelay: "0.2s",
-            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.boxShadow =
-              "0 0 120px 50px rgba(255,187,0,0.35), 0 8px 100px 40px rgba(255,187,0,0.15)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.boxShadow =
-              "0 0 83px 29px rgba(255,187,0,0.23), 0 4px 68px 23px rgba(255,187,0,0.07)";
-          }}
-        >
-          <span className="flex items-center gap-2 transition-all duration-300 group-hover:gap-3">
-            Launch Now
-            <svg
-              className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:translate-x-1"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2.5}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </span>
-        </a>
-
-        {/* Dashboard Image - with device frame */}
-        <div className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 relative animate-slideInUp delay-500">
-          <div
-            className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_80px_rgba(76,255,255,0.12)] hover:border-white/20"
+        {/* CTA Row */}
+        <div className="flex flex-wrap items-center gap-4 sm:gap-5 mb-10 sm:mb-14 animate-fadeInUp delay-300">
+          <a
+            href="#launch"
+            className="group relative px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-sans font-semibold text-[14px] sm:text-[16px] text-[#050505] overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,255,0.3)] hover:-translate-y-0.5"
             style={{
-              border: "1px solid rgba(76, 255, 255, 0.3)",
-              boxShadow:
-                "0 25px 120px rgba(76, 255, 255, 0.15), 0 0 80px rgba(0,0,0,0.5)",
-              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 40px 160px rgba(76, 255, 255, 0.25), 0 0 120px rgba(0,0,0,0.6)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 25px 120px rgba(76, 255, 255, 0.15), 0 0 80px rgba(0,0,0,0.5)";
+              background: "linear-gradient(135deg, #00f0ff 0%, #3bb078 100%)",
             }}
           >
-            <Image
-              src="/images/dashboard.png"
-              alt="Quantsuite Trading Dashboard"
-              width={1200}
-              height={800}
-              className="w-full h-auto transition-transform duration-700 hover:scale-[1.02]"
-              priority
-            />
+            <span className="relative z-10 flex items-center gap-2">
+              Launch Platform
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+          </a>
 
-            {/* Subtle overlay glow on hover */}
-            <div className="absolute inset-0 bg-linear-to-t from-accent-cyan/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <a
+            href="#features"
+            className="group px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl font-sans font-medium text-[14px] sm:text-[16px] text-white/80 border border-border-medium hover:border-accent-cyan/30 hover:text-white transition-all duration-300"
+          >
+            <span className="flex items-center gap-2">
+              Explore Features
+              <svg className="w-4 h-4 text-text-muted transition-all duration-300 group-hover:text-accent-cyan group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        {/* Dashboard Preview */}
+        <div className="relative animate-scaleIn delay-400">
+          {/* Terminal-style chrome */}
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border border-border-medium bg-bg-elevated/50">
+            {/* Terminal header */}
+            <div className="flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 border-b border-border-subtle">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ff5f57]" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#febc2e]" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#28c840]" />
+              </div>
+              <div className="flex-1 text-center">
+                <span className="font-mono text-[9px] sm:text-[10px] text-text-muted">
+                  quantsuite_dashboard — live
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse-glow" />
+                <span className="font-mono text-[9px] sm:text-[10px] text-accent-green">LIVE</span>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <Image
+                src="/images/dashboard.png"
+                alt="Quantsuite Trading Dashboard"
+                width={1200}
+                height={800}
+                className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.01]"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-40 pointer-events-none" />
+            </div>
           </div>
+
+          {/* Reflection glow */}
+          <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-16 bg-accent-cyan/10 blur-[60px] rounded-full pointer-events-none" />
+        </div>
+
+        {/* Floating metric badges */}
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 sm:mt-10 animate-fadeInUp delay-500">
+          {[
+            { label: "Alpha Signals", value: "24,891", color: "#00f0ff" },
+            { label: "Avg Latency", value: "12ms", color: "#3bb078" },
+            { label: "Win Rate", value: "68.4%", color: "#ff9e00" },
+          ].map((m) => (
+            <div
+              key={m.label}
+              className="glass-card px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg flex items-center gap-2.5 sm:gap-3"
+            >
+              <div className="w-1.5 h-1.5 rounded-full animate-pulse-glow" style={{ background: m.color }} />
+              <div className="flex flex-col">
+                <span className="font-mono text-[9px] sm:text-[10px] text-text-muted uppercase tracking-wider">{m.label}</span>
+                <span className="font-mono text-[13px] sm:text-[15px] font-semibold" style={{ color: m.color }}>{m.value}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

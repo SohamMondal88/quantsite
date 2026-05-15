@@ -1,42 +1,74 @@
-"use client";
+const partners = [
+  { name: "Wintermute", color: "#4488ff" },
+  { name: "Jump Crypto", color: "#3bb078" },
+  { name: "CMS Holdings", color: "#ff9e00" },
+  { name: "Alameda Research", color: "#9d4edd" },
+  { name: "Three Arrows", color: "#00f0ff" },
+  { name: "Multicoin", color: "#ff5f57" },
+];
 
 export default function TrustedBy() {
-  const partners = [
-    { name: "Wintermute", color: "#647bff" },
-    { name: "Jump Crypto", color: "#3bb078" },
-    { name: "CMS Holdings", color: "#ffab4c" },
-    { name: "Alameda", color: "#7650fd" },
-    { name: "Three Arrows", color: "#4cffff" },
-    { name: "Multicoin", color: "#65ff99" },
-  ];
-
   return (
-    <section className="w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 md:py-20">
-      <div className="max-w-[1200px] mx-auto text-center">
-        <h2 className="font-serif text-[36px] sm:text-[56px] md:text-[72px] lg:text-[90px] xl:text-[114px] font-normal text-white mb-8 sm:mb-10 lg:mb-12 leading-tight animate-fadeInUp">
-          Trusted by the{" "}
-          <span className="gradient-hero animate-text-glow">
-            best
-          </span>
-        </h2>
+    <section className="w-full py-12 sm:py-16 lg:py-20 overflow-hidden">
+      {/* Section label */}
+      <div className="text-center mb-8 sm:mb-10">
+        <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] text-text-muted uppercase">
+          Trusted Infrastructure Partners
+        </span>
+      </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-10 sm:gap-y-6 md:gap-x-12 md:gap-y-8 lg:gap-10 xl:gap-16">
-          {partners.map((partner, i) => (
-            <span
-              key={partner.name}
-              className={`group relative font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] xl:text-[24px] font-medium transition-all duration-500 cursor-default animate-fadeInUp delay-${(i + 1) * 100} text-center lg:text-left`}
-              style={{ color: partner.color }}
+      {/* Marquee */}
+      <div className="relative">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />
+
+        <div className="flex animate-marquee">
+          {[...partners, ...partners, ...partners, ...partners].map((partner, i) => (
+            <div
+              key={`${partner.name}-${i}`}
+              className="group flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3 sm:py-4 shrink-0"
             >
-              <span className="transition-all duration-500 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.3)] group-hover:scale-110 inline-block">
+              {/* Logo placeholder */}
+              <div
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center font-mono text-[10px] sm:text-[12px] font-bold text-white/80 transition-all duration-500 group-hover:scale-110"
+                style={{
+                  background: `${partner.color}15`,
+                  border: `1px solid ${partner.color}30`,
+                }}
+              >
+                {partner.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}
+              </div>
+              <span
+                className="font-sans text-[15px] sm:text-[17px] md:text-[20px] font-medium transition-all duration-500 group-hover:opacity-100"
+                style={{ color: `${partner.color}90` }}
+              >
                 {partner.name}
               </span>
-              <span
-                className="absolute -bottom-1 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 h-[2px] w-0 bg-current rounded-full transition-all duration-500 group-hover:w-full"
-                style={{ opacity: 0.6 }}
-              />
-            </span>
+            </div>
           ))}
         </div>
+      </div>
+
+      {/* Static grid for mobile fallback */}
+      <div className="sm:hidden grid grid-cols-2 gap-4 px-5 mt-8">
+        {partners.map((partner) => (
+          <div
+            key={partner.name}
+            className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg"
+            style={{ background: `${partner.color}10` }}
+          >
+            <div
+              className="w-6 h-6 rounded flex items-center justify-center font-mono text-[9px] font-bold text-white/70"
+              style={{ background: `${partner.color}20` }}
+            >
+              {partner.name[0]}
+            </div>
+            <span className="font-sans text-[12px] font-medium" style={{ color: `${partner.color}90` }}>
+              {partner.name}
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   );
