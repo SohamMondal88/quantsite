@@ -11,34 +11,36 @@ export default function Features() {
   return (
     <section id="features" className="relative w-full px-8 md:px-16 py-16">
       {/* Vertical Green Line - Rectangle 83 */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-[13px] hidden lg:block"
+      <div
+        className="absolute left-1/2 top-0 bottom-0 w-[13px] hidden lg:block animate-fadeIn"
         style={{
           opacity: 0.32,
-          background: "linear-gradient(180deg, rgba(59,176,120,0.15) 0%, rgba(59,176,120,1) 25%, rgba(59,176,120,0.94) 50%, rgba(59,176,120,0.84) 75%, rgba(59,176,120,0.15) 100%)",
+          background:
+            "linear-gradient(180deg, rgba(59,176,120,0.15) 0%, rgba(59,176,120,1) 25%, rgba(59,176,120,0.94) 50%, rgba(59,176,120,0.84) 75%, rgba(59,176,120,0.15) 100%)",
         }}
       />
 
       <div className="max-w-[1200px] mx-auto">
         {/* We Offer Label */}
-        <p className="font-sans text-[24px] md:text-[36px] text-white/80 mb-12 tracking-[-0.01em]">
+        <p className="font-sans text-[24px] md:text-[36px] text-white/80 mb-12 tracking-[-0.01em] animate-fadeInUp">
           We Offer
         </p>
 
         {/* Feature Navigation Pills */}
         <div className="flex flex-wrap gap-4 md:gap-6 mb-24">
-          {featureNavItems.map((item) => (
+          {featureNavItems.map((item, i) => (
             <div
               key={item.name}
-              className="flex items-center gap-4 px-5 py-4 md:px-6 md:py-5 rounded-[32px]"
+              className={`group flex items-center gap-4 px-5 py-4 md:px-6 md:py-5 rounded-[32px] cursor-default feature-pill animate-fadeInUp delay-${(i + 1) * 100}`}
               style={{
-                background: "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.13) 100%)",
+                background:
+                  "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.13) 100%)",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
-                border: "1px solid rgba(255,255,255,0.1)",
               }}
             >
               <div
-                className="w-12 h-12 md:w-[60px] md:h-[60px] rounded-full flex items-center justify-center shrink-0"
+                className="w-12 h-12 md:w-[60px] md:h-[60px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110"
                 style={{ background: item.color }}
               >
                 <svg
@@ -78,7 +80,7 @@ export default function Features() {
                   )}
                 </svg>
               </div>
-              <span className="font-serif text-[16px] md:text-[24px] lg:text-[36px] text-white whitespace-nowrap">
+              <span className="font-serif text-[16px] md:text-[24px] lg:text-[36px] text-white whitespace-nowrap transition-colors duration-300 group-hover:text-accent-cyan">
                 {item.name}
               </span>
             </div>
@@ -86,9 +88,9 @@ export default function Features() {
         </div>
 
         {/* Feature 1: SwarmEngine AI */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center animate-slideInUp">
           <div className="relative">
-            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4">
+            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4 select-none">
               01
             </p>
             <div className="relative z-10 pt-20">
@@ -101,36 +103,37 @@ export default function Features() {
               </p>
               <a
                 href="#"
-                className="font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors"
+                className="group inline-flex items-center gap-2 font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
               >
-                Learn more →
+                Learn more
+                <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
               </a>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative group">
             <Image
               src="/images/element-1.png"
               alt="SwarmEngine AI Dashboard"
               width={800}
               height={600}
-              className="w-full h-auto rounded-2xl"
+              className="w-full h-auto rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
             />
           </div>
         </div>
 
         {/* Feature 2: Factor Zoo Pipeline */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center">
-          <div className="order-2 lg:order-1 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center animate-slideInUp">
+          <div className="order-2 lg:order-1 relative group">
             <Image
               src="/images/element-2.png"
               alt="Factor Zoo Pipeline"
               width={800}
               height={600}
-              className="w-full h-auto rounded-2xl"
+              className="w-full h-auto rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
             />
           </div>
           <div className="order-1 lg:order-2 relative">
-            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4">
+            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4 select-none">
               02
             </p>
             <div className="relative z-10 pt-20">
@@ -143,18 +146,19 @@ export default function Features() {
               </p>
               <a
                 href="#"
-                className="font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors"
+                className="group inline-flex items-center gap-2 font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
               >
-                Learn more →
+                Learn more
+                <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
               </a>
             </div>
           </div>
         </div>
 
         {/* Feature 3: Walk Forward Backtester */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center animate-slideInUp">
           <div className="relative">
-            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4">
+            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4 select-none">
               03
             </p>
             <div className="relative z-10 pt-20">
@@ -167,36 +171,37 @@ export default function Features() {
               </p>
               <a
                 href="#"
-                className="font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors"
+                className="group inline-flex items-center gap-2 font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
               >
-                Learn more →
+                Learn more
+                <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
               </a>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative group">
             <Image
               src="/images/trading-card.png"
               alt="Walk Forward Backtester"
               width={800}
               height={600}
-              className="w-full h-auto rounded-2xl"
+              className="w-full h-auto rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
             />
           </div>
         </div>
 
         {/* Feature 4: Market System Intelligence */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 items-center">
-          <div className="order-2 lg:order-1 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 items-center animate-slideInUp">
+          <div className="order-2 lg:order-1 relative group">
             <Image
               src="/images/dashboard.png"
               alt="Market System Intelligence"
               width={800}
               height={600}
-              className="w-full h-auto rounded-2xl"
+              className="w-full h-auto rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
             />
           </div>
           <div className="order-1 lg:order-2 relative">
-            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4">
+            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4 select-none">
               04
             </p>
             <div className="relative z-10 pt-20">
@@ -210,9 +215,10 @@ export default function Features() {
               </p>
               <a
                 href="#"
-                className="font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors"
+                className="group inline-flex items-center gap-2 font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
               >
-                Learn more →
+                Learn more
+                <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
               </a>
             </div>
           </div>
