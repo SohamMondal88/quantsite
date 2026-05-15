@@ -4,12 +4,12 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[1400px] overflow-hidden">
+    <section className="relative w-full overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-32">
       {/* Floating decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Rectangle 125 - top right gradient */}
         <div
-          className="absolute animate-float-slow"
+          className="absolute animate-float-slow hidden sm:block"
           style={{
             right: "-5%",
             top: "1%",
@@ -23,7 +23,7 @@ export default function Hero() {
 
         {/* Rectangle 127 - decorative near dashboard */}
         <div
-          className="absolute animate-float delay-200"
+          className="absolute animate-float delay-200 hidden md:block"
           style={{
             right: "15%",
             top: "7%",
@@ -37,9 +37,9 @@ export default function Hero() {
           }}
         />
 
-        {/* Glowing dot accents */}
+        {/* Glowing dot accents - hidden on very small screens */}
         <div
-          className="absolute rounded-full animate-glow-pulse"
+          className="absolute rounded-full animate-glow-pulse hidden sm:block"
           style={{
             left: "8%",
             top: "18%",
@@ -50,7 +50,7 @@ export default function Hero() {
           }}
         />
         <div
-          className="absolute rounded-full animate-glow-pulse-green delay-300"
+          className="absolute rounded-full animate-glow-pulse-green delay-300 hidden lg:block"
           style={{
             right: "12%",
             top: "32%",
@@ -61,7 +61,7 @@ export default function Hero() {
           }}
         />
         <div
-          className="absolute rounded-full animate-glow-pulse delay-500"
+          className="absolute rounded-full animate-glow-pulse delay-500 hidden md:block"
           style={{
             left: "20%",
             top: "45%",
@@ -73,12 +73,12 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-[1200px] mx-auto px-8 pt-8">
+      <div className="relative max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-8 pt-4 sm:pt-8">
         {/* Hero Text with Green Dot */}
-        <div className="flex items-start gap-4 mb-4 animate-slideInUp">
-          <div className="flex-1">
+        <div className="flex items-start gap-3 sm:gap-4 mb-4 animate-slideInUp">
+          <div className="flex-1 min-w-0">
             <h1
-              className="font-serif text-[48px] md:text-[80px] lg:text-[124px] font-normal leading-[1.12] tracking-normal animate-text-glow"
+              className="font-serif text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] xl:text-[104px] font-normal leading-[1.1] sm:leading-[1.12] tracking-normal animate-text-glow"
               style={{
                 background:
                   "linear-gradient(135deg, rgba(76,255,255,0.56) 0%, rgba(129,255,227,1) 31%, rgba(149,255,216,1) 44%, rgba(0,255,163,1) 100%)",
@@ -92,13 +92,14 @@ export default function Hero() {
               <br />
               Human Limits
               <br />
-              on Quantsuite
+              <span className="hidden sm:inline">on Quantsuite</span>
+              <span className="sm:hidden">on Quantsuite</span>
             </h1>
           </div>
 
           {/* Green Dot - Ellipse 13 */}
           <div
-            className="hidden lg:block mt-8 shrink-0 animate-scaleIn delay-300"
+            className="hidden lg:block mt-6 xl:mt-8 shrink-0 animate-scaleIn delay-300"
             style={{ width: 51, height: 51 }}
           >
             <div
@@ -115,31 +116,18 @@ export default function Hero() {
 
         {/* Subtitle in glassmorphism frame */}
         <div
-          className="relative mb-8 inline-block glass-card animate-fadeInUp delay-200"
+          className="relative mb-6 sm:mb-8 inline-block glass-card animate-fadeInUp delay-200 w-full sm:w-auto"
           style={{
             background:
               "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
             borderRadius: "16px",
-            padding: "44px 45px",
-            maxWidth: "798px",
-            border: "1px solid rgba(255, 255, 255, 0.12)",
-            boxShadow: "0 0 40px rgba(76, 255, 255, 0.1)",
-            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.boxShadow =
-              "0 0 60px rgba(76, 255, 255, 0.25)";
-            e.currentTarget.style.transform = "translateY(-5px)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.boxShadow =
-              "0 0 40px rgba(76, 255, 255, 0.1)";
-            e.currentTarget.style.transform = "translateY(0)";
+            padding: "24px 20px",
+            maxWidth: "100%",
           }}
         >
-          <p className="font-sans text-[16px] md:text-[25px] text-white/90 max-w-xl leading-[1.32]">
+          <p className="font-sans text-[15px] sm:text-[18px] md:text-[22px] lg:text-[25px] text-white/90 max-w-xl leading-[1.32]">
             QuantSuite is your AI powered edge in the markets built for quants,
             traders, and visionaries
           </p>
@@ -148,7 +136,7 @@ export default function Hero() {
         {/* Launch Now Button */}
         <a
           href="#launch"
-          className="group inline-block px-8 py-4 rounded-2xl launch-btn text-white font-bold text-[18px] md:text-[30px] transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,187,0,0.35)] hover:-translate-y-1 animate-fadeInUp delay-400"
+          className="group inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-2xl launch-btn text-white font-bold text-[16px] sm:text-[18px] md:text-[24px] lg:text-[30px] transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,187,0,0.35)] hover:-translate-y-1 animate-fadeInUp delay-400"
           style={{
             boxShadow:
               "0 0 83px 29px rgba(255,187,0,0.23), 0 4px 68px 23px rgba(255,187,0,0.07)",
@@ -167,7 +155,7 @@ export default function Hero() {
           <span className="flex items-center gap-2 transition-all duration-300 group-hover:gap-3">
             Launch Now
             <svg
-              className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
+              className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:translate-x-1"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -181,9 +169,9 @@ export default function Hero() {
         </a>
 
         {/* Dashboard Image - with device frame */}
-        <div className="mt-8 relative animate-slideInUp delay-500">
+        <div className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 relative animate-slideInUp delay-500">
           <div
-            className="relative rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_80px_rgba(76,255,255,0.12)] hover:border-white/20"
+            className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_80px_rgba(76,255,255,0.12)] hover:border-white/20"
             style={{
               border: "1px solid rgba(76, 255, 255, 0.3)",
               boxShadow:
@@ -209,7 +197,7 @@ export default function Hero() {
             />
 
             {/* Subtle overlay glow on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-accent-cyan/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-t from-accent-cyan/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           </div>
         </div>
       </div>
