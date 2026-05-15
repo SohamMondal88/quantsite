@@ -1,3 +1,5 @@
+"use client";
+
 export default function Testimonials() {
   return (
     <section className="w-full px-8 md:px-16 py-16">
@@ -5,27 +7,49 @@ export default function Testimonials() {
         {/* Top row - red/pink cards */}
         <div className="flex justify-center gap-8 mb-4">
           <div
-            className="w-[280px] md:w-[350px] p-4 rounded-[20px]"
+            className="w-[280px] md:w-[350px] p-4 rounded-[20px] hover-lift animate-slide-up"
             style={{
               background:
                 "linear-gradient(135deg, rgba(177,91,91,0.75) 0%, rgba(236,73,73,1) 100%)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              boxShadow: "0 10px 40px rgba(236, 73, 73, 0.2)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 20px 60px rgba(236, 73, 73, 0.35)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 10px 40px rgba(236, 73, 73, 0.2)";
             }}
           >
             <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
-              The walk Forward engine saved us from a disastrous overfitting loop
-              in our volatility strategies. Pure institutional grade.
+              The walk Forward engine saved us from a disastrous overfitting
+              loop in our volatility strategies. Pure institutional grade.
             </p>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">Sarah chen</span>
+              <span className="font-sans text-[12px] text-white/80">
+                Sarah chen
+              </span>
             </div>
           </div>
 
           <div
-            className="w-[280px] md:w-[320px] p-4 rounded-[20px]"
+            className="w-[280px] md:w-[320px] p-4 rounded-[20px] hover-lift animate-slide-up stagger-2"
             style={{
               background:
                 "linear-gradient(135deg, rgba(177,91,91,0.75) 0%, rgba(236,73,73,1) 100%)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              boxShadow: "0 10px 40px rgba(236, 73, 73, 0.2)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 20px 60px rgba(236, 73, 73, 0.35)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 10px 40px rgba(236, 73, 73, 0.2)";
             }}
           >
             <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
@@ -34,30 +58,42 @@ export default function Testimonials() {
             </p>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">David Kross</span>
+              <span className="font-sans text-[12px] text-white/80">
+                David Kross
+              </span>
             </div>
           </div>
         </div>
 
         {/* Connector dots and lines */}
         <div className="flex justify-center gap-8 mb-4">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center animate-slide-up stagger-3">
             <div className="w-[1px] h-8 bg-white/20" />
-            <div className="w-2 h-2 rounded-full bg-accent-green" />
+            <div className="w-2 h-2 rounded-full bg-accent-green animate-glow-pulse" />
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center animate-slide-up stagger-3">
             <div className="w-[1px] h-8 bg-white/20" />
-            <div className="w-2 h-2 rounded-full bg-accent-green" />
+            <div className="w-2 h-2 rounded-full bg-accent-green animate-glow-pulse" />
           </div>
         </div>
 
         {/* Bottom row - green cards */}
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 flex-wrap">
           <div
-            className="w-[260px] md:w-[340px] p-4 rounded-[20px]"
+            className="w-[260px] md:w-[340px] p-4 rounded-[20px] hover-lift animate-slide-up stagger-4"
             style={{
               background:
                 "linear-gradient(135deg, rgba(59,176,120,0.75) 0%, rgba(89,182,137,1) 100%)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              boxShadow: "0 10px 40px rgba(59, 176, 120, 0.2)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 20px 60px rgba(59, 176, 120, 0.35)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 10px 40px rgba(59, 176, 120, 0.2)";
             }}
           >
             <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
@@ -66,15 +102,27 @@ export default function Testimonials() {
             </p>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">Marcus Vance</span>
+              <span className="font-sans text-[12px] text-white/80">
+                Marcus Vance
+              </span>
             </div>
           </div>
 
           <div
-            className="w-[260px] md:w-[360px] p-4 rounded-[20px]"
+            className="w-[260px] md:w-[360px] p-4 rounded-[20px] hover-lift animate-slide-up stagger-5"
             style={{
               background:
                 "linear-gradient(135deg, rgba(59,176,120,0.75) 0%, rgba(89,182,137,1) 100%)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              boxShadow: "0 10px 40px rgba(59, 176, 120, 0.2)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 20px 60px rgba(59, 176, 120, 0.35)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 10px 40px rgba(59, 176, 120, 0.2)";
             }}
           >
             <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
@@ -83,15 +131,27 @@ export default function Testimonials() {
             </p>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">David Kross</span>
+              <span className="font-sans text-[12px] text-white/80">
+                David Kross
+              </span>
             </div>
           </div>
 
           <div
-            className="w-[260px] md:w-[360px] p-4 rounded-[20px]"
+            className="w-[260px] md:w-[360px] p-4 rounded-[20px] hover-lift animate-slide-up stagger-5"
             style={{
               background:
                 "linear-gradient(135deg, rgba(59,176,120,0.75) 0%, rgba(89,182,137,1) 100%)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              boxShadow: "0 10px 40px rgba(59, 176, 120, 0.2)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 20px 60px rgba(59, 176, 120, 0.35)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 10px 40px rgba(59, 176, 120, 0.2)";
             }}
           >
             <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
@@ -100,7 +160,9 @@ export default function Testimonials() {
             </p>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">suvendu adhikary</span>
+              <span className="font-sans text-[12px] text-white/80">
+                suvendu adhikary
+              </span>
             </div>
           </div>
         </div>
