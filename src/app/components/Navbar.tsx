@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <div className="flex items-center gap-3 animate-fadeInDown">
         {/* Logo icon + text */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 cursor-pointer">
           <div
             className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm transition-all duration-500 hover:shadow-[0_0_20px_rgba(59,176,120,0.4)] hover:scale-105"
             style={{
@@ -62,8 +62,9 @@ export default function Navbar() {
           href="#discord"
           className="group px-6 py-3 rounded-xl font-sans font-bold text-[16px] md:text-[18px] text-white transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,176,120,0.25)] hover:border-white/20 animate-fadeInDown delay-400"
           style={{
-            background: "rgba(59, 176, 120, 0.17)",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background:
+              "linear-gradient(135deg, rgba(59, 176, 120, 0.25) 0%, rgba(76, 255, 255, 0.15) 100%)",
+            border: "1px solid rgba(76, 255, 255, 0.3)",
           }}
         >
           <span className="flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
@@ -78,6 +79,14 @@ export default function Navbar() {
           </span>
         </a>
       </div>
+
+      <style>{`
+        @media (hover: hover) {
+          a:hover {
+            box-shadow: 0 0 30px rgba(76, 255, 255, 0.3);
+          }
+        }
+      `}</style>
     </nav>
   );
 }

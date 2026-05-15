@@ -8,7 +8,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full px-8 md:px-16 py-16">
+    <footer className="w-full px-8 md:px-16 py-16 relative">
       <div className="max-w-[1200px] mx-auto">
         <div className="group relative overflow-hidden rounded-2xl mb-8 transition-all duration-500 hover:shadow-[0_0_60px_rgba(76,255,255,0.08)]">
           <Image

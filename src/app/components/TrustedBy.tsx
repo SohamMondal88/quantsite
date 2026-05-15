@@ -1,3 +1,5 @@
+"use client";
+
 export default function TrustedBy() {
   const partners = [
     { name: "Wintermute", color: "#647bff" },

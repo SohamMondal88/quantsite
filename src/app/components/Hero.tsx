@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export default function Hero() {
@@ -31,6 +33,7 @@ export default function Hero() {
               "linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 100%)",
             borderRadius: "19px",
             transform: "rotate(-2deg)",
+            animationDelay: "0.5s",
           }}
         />
 
@@ -82,6 +85,7 @@ export default function Hero() {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
+                textShadow: "0 0 80px rgba(76, 255, 255, 0.2)",
               }}
             >
               Trade Beyond
@@ -100,8 +104,7 @@ export default function Hero() {
             <div
               className="w-full h-full rounded-full transition-transform duration-500 hover:scale-110"
               style={{
-                background:
-                  "linear-gradient(135deg, #3bb078 0%, #8fbfb8 100%)",
+                background: "linear-gradient(135deg, #3bb078 0%, #8fbfb8 100%)",
                 border: "15px solid rgba(207, 217, 212, 0.2)",
                 boxSizing: "border-box",
                 boxShadow: "0 0 30px rgba(59,176,120,0.3)",
@@ -114,12 +117,26 @@ export default function Hero() {
         <div
           className="relative mb-8 inline-block glass-card animate-fadeInUp delay-200"
           style={{
-            background: "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%)",
+            background:
+              "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
             borderRadius: "16px",
             padding: "44px 45px",
             maxWidth: "798px",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+            boxShadow: "0 0 40px rgba(76, 255, 255, 0.1)",
+            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow =
+              "0 0 60px rgba(76, 255, 255, 0.25)";
+            e.currentTarget.style.transform = "translateY(-5px)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow =
+              "0 0 40px rgba(76, 255, 255, 0.1)";
+            e.currentTarget.style.transform = "translateY(0)";
           }}
         >
           <p className="font-sans text-[16px] md:text-[25px] text-white/90 max-w-xl leading-[1.32]">
@@ -133,7 +150,18 @@ export default function Hero() {
           href="#launch"
           className="group inline-block px-8 py-4 rounded-2xl launch-btn text-white font-bold text-[18px] md:text-[30px] transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,187,0,0.35)] hover:-translate-y-1 animate-fadeInUp delay-400"
           style={{
-            boxShadow: "0 0 83px 29px rgba(255,187,0,0.23), 0 4px 68px 23px rgba(255,187,0,0.07)",
+            boxShadow:
+              "0 0 83px 29px rgba(255,187,0,0.23), 0 4px 68px 23px rgba(255,187,0,0.07)",
+            animationDelay: "0.2s",
+            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow =
+              "0 0 120px 50px rgba(255,187,0,0.35), 0 8px 100px 40px rgba(255,187,0,0.15)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow =
+              "0 0 83px 29px rgba(255,187,0,0.23), 0 4px 68px 23px rgba(255,187,0,0.07)";
           }}
         >
           <span className="flex items-center gap-2 transition-all duration-300 group-hover:gap-3">
@@ -157,8 +185,18 @@ export default function Hero() {
           <div
             className="relative rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_80px_rgba(76,255,255,0.12)] hover:border-white/20"
             style={{
-              border: "1px solid rgba(255,255,255,0.1)",
-              boxShadow: "0 25px 80px rgba(0,0,0,0.5)",
+              border: "1px solid rgba(76, 255, 255, 0.3)",
+              boxShadow:
+                "0 25px 120px rgba(76, 255, 255, 0.15), 0 0 80px rgba(0,0,0,0.5)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 40px 160px rgba(76, 255, 255, 0.25), 0 0 120px rgba(0,0,0,0.6)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow =
+                "0 25px 120px rgba(76, 255, 255, 0.15), 0 0 80px rgba(0,0,0,0.5)";
             }}
           >
             <Image
