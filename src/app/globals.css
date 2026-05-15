@@ -173,6 +173,17 @@ body {
   50%      { opacity: 1; transform: scale(1.03); }
 }
 
+@keyframes meshMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
 /* ---- Animation Classes ---- */
 .animate-fadeIn      { animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 .animate-fadeInUp    { animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
@@ -316,7 +327,31 @@ body {
   [data-animate] { opacity: 1; }
 }
 
-/* ---- Feature Pill Hover (replaces inline JS handlers) ---- */
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+/* Mobile-optimized glass reduces blur for performance */
+@media (max-width: 768px) {
+  .glass, .glass-strong, .glass-card {
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+  }
+  /* Reduce glow intensity on mobile for battery */
+  .glow-cyan, .glow-cyan-strong, .glow-green, .glow-yellow {
+    box-shadow: none;
+  }
+  .animate-text-glow {
+    animation: none;
+    text-shadow: 0 0 10px rgba(76, 255, 255, 0.15);
+  }
+}
+
+/* ============================================
+   EXISTING UTILITIES (preserved + enhanced)
+   ============================================ */
+
+/* ---- Feature Pill Hover ---- */
 .feature-pill {
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   border: 1px solid rgba(255,255,255,0.1);

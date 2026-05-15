@@ -31,59 +31,59 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="w-full px-8 md:px-16 py-16">
+    <section className="w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16">
       <div className="max-w-[1200px] mx-auto relative">
         {/* Top row - red/pink cards */}
-        <div className="flex justify-center gap-8 mb-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 lg:gap-8 mb-4">
           {topTestimonials.map((t) => (
             <div
               key={t.author}
-              className={`group w-[280px] md:w-[350px] p-4 rounded-[20px] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(236,73,73,0.25)] animate-fadeInUp ${t.delay}`}
+              className={`group w-full sm:w-[260px] md:w-[300px] lg:w-[350px] p-4 sm:p-5 rounded-[16px] sm:rounded-[20px] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(236,73,73,0.25)] animate-fadeInUp ${t.delay}`}
               style={{
                 background:
                   "linear-gradient(135deg, rgba(177,91,91,0.75) 0%, rgba(236,73,73,1) 100%)",
                 border: "1px solid rgba(255,255,255,0.08)",
               }}
             >
-              <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3 transition-colors duration-300">
+              <p className="font-sans text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] text-white leading-relaxed sm:leading-snug mb-3 transition-colors duration-300">
                 {t.text}
               </p>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-white/60 animate-dot-pulse" />
-                <span className="font-sans text-[12px] text-white/80">{t.author}</span>
+                <span className="font-sans text-[11px] sm:text-[12px] text-white/80">{t.author}</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Connector dots and lines */}
-        <div className="flex justify-center gap-8 mb-4">
+        {/* Connector dots and lines - hidden on mobile */}
+        <div className="hidden sm:flex justify-center gap-6 lg:gap-8 mb-4">
           {topTestimonials.map((_, i) => (
             <div key={i} className="flex flex-col items-center">
-              <div className="w-[1px] h-8 bg-white/20" />
+              <div className="w-[1px] h-6 sm:h-8 bg-white/20" />
               <div className="w-2 h-2 rounded-full bg-accent-green animate-dot-pulse" />
             </div>
           ))}
         </div>
 
         {/* Bottom row - green cards */}
-        <div className="flex justify-center gap-6">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-5 lg:gap-6">
           {bottomTestimonials.map((t) => (
             <div
               key={t.author + t.delay}
-              className={`group w-[260px] md:w-[340px] p-4 rounded-[20px] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(59,176,120,0.25)] animate-fadeInUp ${t.delay}`}
+              className={`group w-full sm:w-[220px] md:w-[280px] lg:w-[340px] xl:w-[360px] p-4 sm:p-5 rounded-[16px] sm:rounded-[20px] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(59,176,120,0.25)] animate-fadeInUp ${t.delay}`}
               style={{
                 background:
                   "linear-gradient(135deg, rgba(59,176,120,0.75) 0%, rgba(89,182,137,1) 100%)",
                 border: "1px solid rgba(255,255,255,0.08)",
               }}
             >
-              <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3 transition-colors duration-300">
+              <p className="font-sans text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] text-white leading-relaxed sm:leading-snug mb-3 transition-colors duration-300">
                 {t.text}
               </p>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-white/60 animate-dot-pulse" />
-                <span className="font-sans text-[12px] text-white/80">{t.author}</span>
+                <span className="font-sans text-[11px] sm:text-[12px] text-white/80">{t.author}</span>
               </div>
             </div>
           ))}

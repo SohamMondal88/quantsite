@@ -9,8 +9,8 @@ const featureNavItems = [
 
 export default function Features() {
   return (
-    <section id="features" className="relative w-full px-8 md:px-16 py-16">
-      {/* Vertical Green Line - Rectangle 83 */}
+    <section id="features" className="relative w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16">
+      {/* Vertical Green Line - hidden on mobile */}
       <div
         className="absolute left-1/2 top-0 bottom-0 w-[13px] hidden lg:block animate-fadeIn"
         style={{
@@ -22,16 +22,16 @@ export default function Features() {
 
       <div className="max-w-[1200px] mx-auto">
         {/* We Offer Label */}
-        <p className="font-sans text-[24px] md:text-[36px] text-white/80 mb-12 tracking-[-0.01em] animate-fadeInUp">
+        <p className="font-sans text-[20px] sm:text-[24px] md:text-[30px] lg:text-[36px] text-white/80 mb-8 sm:mb-12 tracking-[-0.01em] animate-fadeInUp">
           We Offer
         </p>
 
-        {/* Feature Navigation Pills */}
-        <div className="flex flex-wrap gap-4 md:gap-6 mb-24">
+        {/* Feature Navigation Pills - horizontal scroll on mobile, wrap on desktop */}
+        <div className="flex gap-3 sm:gap-4 md:gap-6 mb-16 sm:mb-20 md:mb-24 overflow-x-auto pb-2 md:flex-wrap md:overflow-visible snap-x snap-mandatory scrollbar-hide">
           {featureNavItems.map((item, i) => (
             <div
               key={item.name}
-              className={`group flex items-center gap-4 px-5 py-4 md:px-6 md:py-5 rounded-[32px] cursor-default feature-pill animate-fadeInUp delay-${(i + 1) * 100}`}
+              className={`group flex items-center gap-3 sm:gap-4 px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 rounded-[24px] sm:rounded-[32px] cursor-default feature-pill animate-fadeInUp delay-${(i + 1) * 100} snap-start shrink-0`}
               style={{
                 background:
                   "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.13) 100%)",
@@ -40,11 +40,11 @@ export default function Features() {
               }}
             >
               <div
-                className="w-12 h-12 md:w-[60px] md:h-[60px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-[60px] md:h-[60px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110"
                 style={{ background: item.color }}
               >
                 <svg
-                  className="w-5 h-5 md:w-6 md:h-6 text-white"
+                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -80,7 +80,7 @@ export default function Features() {
                   )}
                 </svg>
               </div>
-              <span className="font-serif text-[16px] md:text-[24px] lg:text-[36px] text-white whitespace-nowrap transition-colors duration-300 group-hover:text-accent-cyan">
+              <span className="font-serif text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[36px] text-white whitespace-nowrap transition-colors duration-300 group-hover:text-accent-cyan">
                 {item.name}
               </span>
             </div>
@@ -88,65 +88,65 @@ export default function Features() {
         </div>
 
         {/* Feature 1: SwarmEngine AI */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center animate-slideInUp">
-          <div className="relative">
-            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4 select-none">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 mb-20 sm:mb-24 md:mb-32 items-center animate-slideInUp">
+          <div className="relative order-1">
+            <p className="font-display text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[240px] text-white/[0.03] font-black leading-none absolute -top-8 sm:-top-12 lg:-top-16 -left-2 sm:-left-4 select-none">
               01
             </p>
-            <div className="relative z-10 pt-20">
-              <h3 className="font-serif text-[36px] md:text-[64px] text-white mb-6 leading-tight">
+            <div className="relative z-10 pt-12 sm:pt-16 lg:pt-20">
+              <h3 className="font-serif text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] text-white mb-4 sm:mb-6 leading-tight">
                 SwarmEngine AI
               </h3>
-              <p className="font-sans text-[16px] md:text-[24px] text-white/80 leading-[1.32] mb-8">
+              <p className="font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-white/80 leading-[1.4] sm:leading-[1.32] mb-6 sm:mb-8">
                 Deploy autonomous agent swarms to analyze alternative data, detect
                 information asymmetry, and synthesize multi-model alpha signals.
               </p>
               <a
                 href="#"
-                className="group inline-flex items-center gap-2 font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
+                className="group inline-flex items-center gap-2 font-sans text-[16px] sm:text-[20px] md:text-[25px] lg:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
               >
                 Learn more
                 <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
               </a>
             </div>
           </div>
-          <div className="relative group">
+          <div className="relative group order-2">
             <Image
               src="/images/element-1.png"
               alt="SwarmEngine AI Dashboard"
               width={800}
               height={600}
-              className="w-full h-auto rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
+              className="w-full h-auto rounded-xl sm:rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
             />
           </div>
         </div>
 
         {/* Feature 2: Factor Zoo Pipeline */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center animate-slideInUp">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 mb-20 sm:mb-24 md:mb-32 items-center animate-slideInUp">
           <div className="order-2 lg:order-1 relative group">
             <Image
               src="/images/element-2.png"
               alt="Factor Zoo Pipeline"
               width={800}
               height={600}
-              className="w-full h-auto rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
+              className="w-full h-auto rounded-xl sm:rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
             />
           </div>
           <div className="order-1 lg:order-2 relative">
-            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4 select-none">
+            <p className="font-display text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[240px] text-white/[0.03] font-black leading-none absolute -top-8 sm:-top-12 lg:-top-16 -left-2 sm:-left-4 select-none">
               02
             </p>
-            <div className="relative z-10 pt-20">
-              <h3 className="font-serif text-[36px] md:text-[64px] text-white mb-6 leading-tight">
+            <div className="relative z-10 pt-12 sm:pt-16 lg:pt-20">
+              <h3 className="font-serif text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] text-white mb-4 sm:mb-6 leading-tight">
                 Factor Zoo Pipeline
               </h3>
-              <p className="font-sans text-[16px] md:text-[24px] text-white/80 leading-[1.32] mb-8">
+              <p className="font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-white/80 leading-[1.4] sm:leading-[1.32] mb-6 sm:mb-8">
                 Access 93+ pre-built alpha factors. Test momentum, value, and
                 quality metrics with instant cross section ranking.
               </p>
               <a
                 href="#"
-                className="group inline-flex items-center gap-2 font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
+                className="group inline-flex items-center gap-2 font-sans text-[16px] sm:text-[20px] md:text-[25px] lg:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
               >
                 Learn more
                 <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
@@ -156,66 +156,66 @@ export default function Features() {
         </div>
 
         {/* Feature 3: Walk Forward Backtester */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 items-center animate-slideInUp">
-          <div className="relative">
-            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4 select-none">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 mb-20 sm:mb-24 md:mb-32 items-center animate-slideInUp">
+          <div className="relative order-1">
+            <p className="font-display text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[240px] text-white/[0.03] font-black leading-none absolute -top-8 sm:-top-12 lg:-top-16 -left-2 sm:-left-4 select-none">
               03
             </p>
-            <div className="relative z-10 pt-20">
-              <h3 className="font-serif text-[36px] md:text-[51px] text-white mb-6 leading-tight">
+            <div className="relative z-10 pt-12 sm:pt-16 lg:pt-20">
+              <h3 className="font-serif text-[28px] sm:text-[36px] md:text-[42px] lg:text-[51px] text-white mb-4 sm:mb-6 leading-tight">
                 Walk Forward Backtester
               </h3>
-              <p className="font-sans text-[16px] md:text-[24px] text-white/80 leading-[1.32] mb-8">
+              <p className="font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-white/80 leading-[1.4] sm:leading-[1.32] mb-6 sm:mb-8">
                 Prevent overfitting. Our walk-forward engine optimizes parameters
                 dynamically across shifting market regimes.
               </p>
               <a
                 href="#"
-                className="group inline-flex items-center gap-2 font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
+                className="group inline-flex items-center gap-2 font-sans text-[16px] sm:text-[20px] md:text-[25px] lg:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
               >
                 Learn more
                 <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
               </a>
             </div>
           </div>
-          <div className="relative group">
+          <div className="relative group order-2">
             <Image
               src="/images/trading-card.png"
               alt="Walk Forward Backtester"
               width={800}
               height={600}
-              className="w-full h-auto rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
+              className="w-full h-auto rounded-xl sm:rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
             />
           </div>
         </div>
 
         {/* Feature 4: Market System Intelligence */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 items-center animate-slideInUp">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 mb-16 sm:mb-20 md:mb-24 items-center animate-slideInUp">
           <div className="order-2 lg:order-1 relative group">
             <Image
               src="/images/dashboard.png"
               alt="Market System Intelligence"
               width={800}
               height={600}
-              className="w-full h-auto rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
+              className="w-full h-auto rounded-xl sm:rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(76,255,255,0.1)] group-hover:scale-[1.02]"
             />
           </div>
           <div className="order-1 lg:order-2 relative">
-            <p className="font-display text-[120px] md:text-[160px] lg:text-[240px] text-white/[0.03] font-black leading-none absolute -top-16 -left-4 select-none">
+            <p className="font-display text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[240px] text-white/[0.03] font-black leading-none absolute -top-8 sm:-top-12 lg:-top-16 -left-2 sm:-left-4 select-none">
               04
             </p>
-            <div className="relative z-10 pt-20">
-              <h3 className="font-serif text-[36px] md:text-[48px] text-white mb-6 leading-tight">
+            <div className="relative z-10 pt-12 sm:pt-16 lg:pt-20">
+              <h3 className="font-serif text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] text-white mb-4 sm:mb-6 leading-tight">
                 Market System Intelligence
               </h3>
-              <p className="font-sans text-[16px] md:text-[24px] text-white/80 leading-[1.32] mb-8">
+              <p className="font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-white/80 leading-[1.4] sm:leading-[1.32] mb-6 sm:mb-8">
                 Runs markets as a system—not a workflow. Continuously detecting
                 signals, shaping strategies, and managing risk before others even
                 react.
               </p>
               <a
                 href="#"
-                className="group inline-flex items-center gap-2 font-sans text-[20px] md:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
+                className="group inline-flex items-center gap-2 font-sans text-[16px] sm:text-[20px] md:text-[25px] lg:text-[31px] text-white hover:text-accent-green transition-colors duration-300"
               >
                 Learn more
                 <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
