@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSerif.variable} ${redHatDisplay.variable} h-full antialiased`}
+      className={`${instrumentSerif.variable} ${redHatDisplay.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans selection:bg-accent-cyan/25">
         {children}

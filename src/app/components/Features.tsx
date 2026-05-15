@@ -1,3 +1,7 @@
+"use client";
+
+"use client";
+
 import Image from "next/image";
 
 const featureNavItems = [
@@ -93,11 +97,11 @@ export default function Features() {
             <p className="font-display text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[240px] text-white/[0.03] font-black leading-none absolute -top-8 sm:-top-12 lg:-top-16 -left-2 sm:-left-4 select-none">
               01
             </p>
-            <div className="relative z-10 pt-12 sm:pt-16 lg:pt-20">
-              <h3 className="font-serif text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] text-white mb-4 sm:mb-6 leading-tight">
+            <div className="relative z-10 pt-20">
+              <h3 className="font-serif text-[36px] md:text-[64px] text-white mb-6 leading-tight">
                 SwarmEngine AI
               </h3>
-              <p className="font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-white/80 leading-[1.4] sm:leading-[1.32] mb-6 sm:mb-8">
+              <p className="font-sans text-[16px] md:text-[24px] text-white/80 leading-[1.32] mb-8">
                 Deploy autonomous agent swarms to analyze alternative data, detect
                 information asymmetry, and synthesize multi-model alpha signals.
               </p>
@@ -136,11 +140,11 @@ export default function Features() {
             <p className="font-display text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[240px] text-white/[0.03] font-black leading-none absolute -top-8 sm:-top-12 lg:-top-16 -left-2 sm:-left-4 select-none">
               02
             </p>
-            <div className="relative z-10 pt-12 sm:pt-16 lg:pt-20">
-              <h3 className="font-serif text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] text-white mb-4 sm:mb-6 leading-tight">
+            <div className="relative z-10 pt-20">
+              <h3 className="font-serif text-[36px] md:text-[64px] text-white mb-6 leading-tight">
                 Factor Zoo Pipeline
               </h3>
-              <p className="font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-white/80 leading-[1.4] sm:leading-[1.32] mb-6 sm:mb-8">
+              <p className="font-sans text-[16px] md:text-[24px] text-white/80 leading-[1.32] mb-8">
                 Access 93+ pre-built alpha factors. Test momentum, value, and
                 quality metrics with instant cross section ranking.
               </p>
@@ -161,11 +165,11 @@ export default function Features() {
             <p className="font-display text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[240px] text-white/[0.03] font-black leading-none absolute -top-8 sm:-top-12 lg:-top-16 -left-2 sm:-left-4 select-none">
               03
             </p>
-            <div className="relative z-10 pt-12 sm:pt-16 lg:pt-20">
-              <h3 className="font-serif text-[28px] sm:text-[36px] md:text-[42px] lg:text-[51px] text-white mb-4 sm:mb-6 leading-tight">
+            <div className="relative z-10 pt-20">
+              <h3 className="font-serif text-[36px] md:text-[51px] text-white mb-6 leading-tight">
                 Walk Forward Backtester
               </h3>
-              <p className="font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-white/80 leading-[1.4] sm:leading-[1.32] mb-6 sm:mb-8">
+              <p className="font-sans text-[16px] md:text-[24px] text-white/80 leading-[1.32] mb-8">
                 Prevent overfitting. Our walk-forward engine optimizes parameters
                 dynamically across shifting market regimes.
               </p>
@@ -204,14 +208,14 @@ export default function Features() {
             <p className="font-display text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[240px] text-white/[0.03] font-black leading-none absolute -top-8 sm:-top-12 lg:-top-16 -left-2 sm:-left-4 select-none">
               04
             </p>
-            <div className="relative z-10 pt-12 sm:pt-16 lg:pt-20">
-              <h3 className="font-serif text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] text-white mb-4 sm:mb-6 leading-tight">
+            <div className="relative z-10 pt-20">
+              <h3 className="font-serif text-[36px] md:text-[48px] text-white mb-6 leading-tight">
                 Market System Intelligence
               </h3>
-              <p className="font-sans text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-white/80 leading-[1.4] sm:leading-[1.32] mb-6 sm:mb-8">
+              <p className="font-sans text-[16px] md:text-[24px] text-white/80 leading-[1.32] mb-8">
                 Runs markets as a system—not a workflow. Continuously detecting
-                signals, shaping strategies, and managing risk before others even
-                react.
+                signals, shaping strategies, and managing risk before others
+                even react.
               </p>
               <a
                 href="#"

@@ -63,7 +63,7 @@ export default function Navbar() {
                 className={`group relative font-sans font-semibold text-[15px] lg:text-[17px] xl:text-[19px] text-white/90 hover:text-white transition-colors duration-300 animate-fadeInDown delay-${(i + 1) * 100}`}
               >
                 {link.label}
-                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-accent-cyan to-accent-green transition-all duration-500 group-hover:w-full rounded-full" />
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-linear-to-r from-accent-cyan to-accent-green transition-all duration-500 group-hover:w-full rounded-full" />
               </a>
             ))}
 
@@ -93,7 +93,7 @@ export default function Navbar() {
             <div className="w-6 h-5 flex flex-col justify-between">
               <span className={`block h-0.5 bg-current rounded-full transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[9px]" : ""}`} />
               <span className={`block h-0.5 bg-current rounded-full transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`block h-0.5 bg-current rounded-full transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[9px]" : ""}`} />
+              <span className={`block h-0.5 bg-current rounded-full transition-all duration-300 ${menuOpen ? "-rotate-45 translate-y-[-9px]" : ""}`} />
             </div>
           </button>
         </div>
@@ -105,7 +105,7 @@ export default function Navbar() {
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="absolute inset-0 bg-[#060606]/95 backdrop-blur-[24px]" onClick={() => setMenuOpen(false)} />
+        <div className="absolute inset-0 bg-[#060606]/95 backdrop-blur-xl" onClick={() => setMenuOpen(false)} />
         <div className="relative h-full flex flex-col items-center justify-center gap-8 px-6">
           {navLinks.map((link, i) => (
             <a
