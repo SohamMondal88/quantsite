@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Pilat Extended';
+  src: local('Impact'), local('Arial Black');
+  font-weight: 900;
+}
+
+:root {
+  --bg: #060606;
+  --bg-card: #050c09;
+  --bg-card-alt: #181818;
+  --accent-green: #3bb078;
+  --accent-orange: #ffab4c;
+  --accent-yellow: #ffdb65;
+  --accent-blue: #516dff;
+  --accent-cyan: #4cffff;
+  --accent-mint: #65ff99;
+  --accent-pink: #ff8c8e;
+  --text-muted: #a4a8aa;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-alt: var(--bg-card-alt);
+  --color-accent-green: var(--accent-green);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-mint: var(--accent-mint);
+  --color-accent-pink: var(--accent-pink);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-red-hat), 'Red Hat Display', Arial, sans-serif;
+  --font-serif: var(--font-instrument-serif), 'Instrument Serif', Georgia, serif;
+  --font-display: 'Pilat Extended', 'Impact', 'Arial Black', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.gradient-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(76, 255, 255, 0.56) 0%,
+    rgba(129, 255, 227, 1) 31%,
+    rgba(149, 255, 216, 1) 44%,
+    rgba(0, 255, 163, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Exact Figma blur values */
+.blur-558 {
+  filter: blur(558px);
+}
+
+.blur-900 {
+  filter: blur(900px);
+}
+
+.blur-236 {
+  filter: blur(236px);
+}
+
+.blur-150 {
+  filter: blur(150px);
+}
+
+.blur-100 {
+  filter: blur(100px);
+}
+
+/* Feature nav pill glassmorphism */
+.glass-pill {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.13) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Green dot gradient */
+.green-dot {
+  background: linear-gradient(135deg, #3bb078 0%, #8fbfb8 100%);
+}
+
+/* Launch button gradient */
+.launch-btn {
+  background: linear-gradient(135deg, #d58700 0%, #f0a800 100%);
+}
+
+/* Number gradient (white to transparent) */
+.number-gradient {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
