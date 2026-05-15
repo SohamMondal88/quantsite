@@ -1,170 +1,94 @@
 "use client";
 
 export default function Testimonials() {
+  const topTestimonials = [
+    {
+      text: "The walk Forward engine saved us from a disastrous overfitting loop in our volatility strategies. Pure institutional grade.",
+      author: "Sarah chen",
+      delay: "delay-100",
+    },
+    {
+      text: "Realtime regime detection kept us ahead of market shifts tight, precise, and reliable.",
+      author: "David Kross",
+      delay: "delay-200",
+    },
+  ];
+
+  const bottomTestimonials = [
+    {
+      text: "Quantsuite's SwarmEngine detected the oil supply squeeze 48 hours before the headlines hit. It's an indispensable edge.",
+      author: "Marcus Vance",
+      delay: "delay-300",
+    },
+    {
+      text: "A masterclass in UI and data density. Having Black Scholes and Heston models side by side with AI signals is a game changer.",
+      author: "David Kross",
+      delay: "delay-400",
+    },
+    {
+      text: "A masterclass in UI and data density. Having Black Scholes and Heston models side by side with AI signals is a game changer.",
+      author: "suvendu adhikary",
+      delay: "delay-500",
+    },
+  ];
+
   return (
     <section className="w-full px-8 md:px-16 py-16">
       <div className="max-w-[1200px] mx-auto relative">
         {/* Top row - red/pink cards */}
         <div className="flex justify-center gap-8 mb-4">
-          <div
-            className="w-[280px] md:w-[350px] p-4 rounded-[20px] hover-lift animate-slide-up"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(177,91,91,0.75) 0%, rgba(236,73,73,1) 100%)",
-              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-              boxShadow: "0 10px 40px rgba(236, 73, 73, 0.2)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 20px 60px rgba(236, 73, 73, 0.35)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 10px 40px rgba(236, 73, 73, 0.2)";
-            }}
-          >
-            <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
-              The walk Forward engine saved us from a disastrous overfitting
-              loop in our volatility strategies. Pure institutional grade.
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">
-                Sarah chen
-              </span>
+          {topTestimonials.map((t) => (
+            <div
+              key={t.author}
+              className={`group w-[280px] md:w-[350px] p-4 rounded-[20px] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(236,73,73,0.25)] animate-fadeInUp ${t.delay}`}
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(177,91,91,0.75) 0%, rgba(236,73,73,1) 100%)",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3 transition-colors duration-300">
+                {t.text}
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-white/60 animate-dot-pulse" />
+                <span className="font-sans text-[12px] text-white/80">{t.author}</span>
+              </div>
             </div>
-          </div>
-
-          <div
-            className="w-[280px] md:w-[320px] p-4 rounded-[20px] hover-lift animate-slide-up stagger-2"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(177,91,91,0.75) 0%, rgba(236,73,73,1) 100%)",
-              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-              boxShadow: "0 10px 40px rgba(236, 73, 73, 0.2)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 20px 60px rgba(236, 73, 73, 0.35)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 10px 40px rgba(236, 73, 73, 0.2)";
-            }}
-          >
-            <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
-              Realtime regime detection kept us ahead of market shifts tight,
-              precise, and reliable.
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">
-                David Kross
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Connector dots and lines */}
         <div className="flex justify-center gap-8 mb-4">
-          <div className="flex flex-col items-center animate-slide-up stagger-3">
-            <div className="w-[1px] h-8 bg-white/20" />
-            <div className="w-2 h-2 rounded-full bg-accent-green animate-glow-pulse" />
-          </div>
-          <div className="flex flex-col items-center animate-slide-up stagger-3">
-            <div className="w-[1px] h-8 bg-white/20" />
-            <div className="w-2 h-2 rounded-full bg-accent-green animate-glow-pulse" />
-          </div>
+          {topTestimonials.map((_, i) => (
+            <div key={i} className="flex flex-col items-center">
+              <div className="w-[1px] h-8 bg-white/20" />
+              <div className="w-2 h-2 rounded-full bg-accent-green animate-dot-pulse" />
+            </div>
+          ))}
         </div>
 
         {/* Bottom row - green cards */}
-        <div className="flex justify-center gap-6 flex-wrap">
-          <div
-            className="w-[260px] md:w-[340px] p-4 rounded-[20px] hover-lift animate-slide-up stagger-4"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(59,176,120,0.75) 0%, rgba(89,182,137,1) 100%)",
-              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-              boxShadow: "0 10px 40px rgba(59, 176, 120, 0.2)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 20px 60px rgba(59, 176, 120, 0.35)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 10px 40px rgba(59, 176, 120, 0.2)";
-            }}
-          >
-            <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
-              Quantsuite's SwarmEngine detected the oil supply squeeze 48 hours
-              before the headlines hit. It's an indispensable edge.
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">
-                Marcus Vance
-              </span>
+        <div className="flex justify-center gap-6">
+          {bottomTestimonials.map((t) => (
+            <div
+              key={t.author + t.delay}
+              className={`group w-[260px] md:w-[340px] p-4 rounded-[20px] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(59,176,120,0.25)] animate-fadeInUp ${t.delay}`}
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(59,176,120,0.75) 0%, rgba(89,182,137,1) 100%)",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3 transition-colors duration-300">
+                {t.text}
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-white/60 animate-dot-pulse" />
+                <span className="font-sans text-[12px] text-white/80">{t.author}</span>
+              </div>
             </div>
-          </div>
-
-          <div
-            className="w-[260px] md:w-[360px] p-4 rounded-[20px] hover-lift animate-slide-up stagger-5"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(59,176,120,0.75) 0%, rgba(89,182,137,1) 100%)",
-              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-              boxShadow: "0 10px 40px rgba(59, 176, 120, 0.2)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 20px 60px rgba(59, 176, 120, 0.35)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 10px 40px rgba(59, 176, 120, 0.2)";
-            }}
-          >
-            <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
-              A masterclass in UI and data density. Having Black Scholes and
-              Heston models side by side with AI signals is a game changer.
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">
-                David Kross
-              </span>
-            </div>
-          </div>
-
-          <div
-            className="w-[260px] md:w-[360px] p-4 rounded-[20px] hover-lift animate-slide-up stagger-5"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(59,176,120,0.75) 0%, rgba(89,182,137,1) 100%)",
-              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-              boxShadow: "0 10px 40px rgba(59, 176, 120, 0.2)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 20px 60px rgba(59, 176, 120, 0.35)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 10px 40px rgba(59, 176, 120, 0.2)";
-            }}
-          >
-            <p className="font-sans text-[14px] md:text-[16px] text-white leading-snug mb-3">
-              A masterclass in UI and data density. Having Black Scholes and
-              Heston models side by side with AI signals is a game changer.
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-white/60" />
-              <span className="font-sans text-[12px] text-white/80">
-                suvendu adhikary
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

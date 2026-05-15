@@ -6,44 +6,47 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
 });
 
 const redHatDisplay = Red_Hat_Display({
   variable: "--font-red-hat",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title:
-    "Quantsuite - Trade Beyond Human Limits | AI-Powered Trading Intelligence",
+  title: "Quantsuite — Trade Beyond Human Limits",
   description:
-    "Market system intelligence for autonomous hedge funds. AI-powered trading infrastructure with advanced risk management and real-time market analysis.",
-  keywords:
-    "trading, AI, quantitative finance, hedge fund, market intelligence",
-  authors: [{ name: "Quantsuite Team" }],
-  viewport: "width=device-width, initial-scale=1.0",
+    "Market system intelligence for autonomous hedge funds. AI-powered trading infrastructure built for quants, traders, and visionaries.",
+  keywords: [
+    "quantitative trading",
+    "algorithmic trading",
+    "AI hedge fund",
+    "autonomous trading",
+    "alpha generation",
+    "backtesting",
+    "SwarmEngine",
+    "market intelligence",
+  ],
+  authors: [{ name: "Quantsuite" }],
+  creator: "Quantsuite",
   openGraph: {
-    title: "Quantsuite - Trade Beyond Human Limits",
+    title: "Quantsuite — Trade Beyond Human Limits",
     description:
-      "AI-powered trading intelligence platform for quants and institutional traders",
+      "Market system intelligence for autonomous hedge funds. AI-powered trading infrastructure.",
     type: "website",
-    url: "https://quantsuite.io",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Quantsuite Trading Dashboard",
-      },
-    ],
+    locale: "en_US",
+    siteName: "Quantsuite",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Quantsuite - Trade Beyond Human Limits",
-    description: "AI-powered trading intelligence platform",
-    images: ["/og-image.png"],
+    title: "Quantsuite — Trade Beyond Human Limits",
+    description:
+      "Market system intelligence for autonomous hedge funds. AI-powered trading infrastructure.",
   },
+  robots: "index, follow",
 };
 
 export default function RootLayout({
@@ -56,20 +59,7 @@ export default function RootLayout({
       lang="en"
       className={`${instrumentSerif.variable} ${redHatDisplay.variable} h-full antialiased scroll-smooth`}
     >
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="theme-color" content="#060606" />
-        <link rel="icon" href="/favicon.ico" />
-        <style>
-          {`
-            * {
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-            }
-          `}
-        </style>
-      </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans relative">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans selection:bg-accent-cyan/25">
         {children}
       </body>
     </html>
