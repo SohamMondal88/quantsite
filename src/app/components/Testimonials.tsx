@@ -41,10 +41,11 @@ function TestimonialCard({
 
   return (
     <div
-      className={`max-w-[280px] p-4 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm ${className}`}
+      className={`p-4 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm ${className}`}
       style={{
         background: bg,
         border: "1px solid rgba(255,255,255,0.08)",
+        width: "min(100%, 280px)",
       }}
     >
       <p className="font-sans text-[12px] leading-[1.65] text-white/95">
@@ -65,10 +66,9 @@ function Connector({
     <div className="flex flex-col items-center">
       {position === "top" ? (
         <>
-          <span className="font-sans text-[14px] font-light text-white/45 mb-2">
+          <span className="font-sans text-[14px] font-light text-white/45 mb-2 text-center whitespace-nowrap">
             {author}
           </span>
-
           <div className="relative w-px h-12 bg-emerald-400/60">
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.7)] border border-emerald-300/40" />
           </div>
@@ -78,8 +78,7 @@ function Connector({
           <div className="relative w-px h-12 bg-emerald-400/60">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.7)] border border-emerald-300/40" />
           </div>
-
-          <span className="font-sans text-[14px] font-light text-white/45 mt-2">
+          <span className="font-sans text-[14px] font-light text-white/45 mt-2 text-center whitespace-nowrap">
             {author}
           </span>
         </>
@@ -97,120 +96,123 @@ export default function Testimonials() {
 
       <div className="relative max-w-7xl mx-auto">
         {/* Heading */}
-        <h2 className="font-serif text-center text-white text-[48px] md:text-[72px] lg:text-[84px] font-light tracking-tight mb-24">
+        <h2 className="font-serif text-center text-white text-[48px] md:text-[64px] lg:text-[84px] font-light tracking-tight mb-24">
           Trusted by the <span className="italic">best</span>
         </h2>
 
-{/* ============ DESKTOP LAYOUT (RESPONSIVE + PERFECTLY ALIGNED) ============ */}
-<div className="hidden lg:block relative h-[34rem] xl:h-[36rem]">
-  {/* Center dashed divider */}
-  <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 border-t border-dashed border-white/20" />
+        {/* ============ DESKTOP LAYOUT (1024px+) - 4 COLUMN ============ */}
+        <div className="hidden lg:block relative" style={{ minHeight: "420px" }}>
+          {/* Horizontal dashed divider */}
+          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 border-t border-dashed border-white/20" />
 
-  {/* ================= TOP ROW ================= */}
-  <div className="absolute inset-x-0 top-0 grid grid-cols-3 items-start">
-    {/* Sarah chen */}
-    <div className="flex flex-col items-start">
-      <div className="ml-[18%]">
-        <Connector author="Sarah chen" position="top" />
-      </div>
+          {/* 4-column grid */}
+          <div className="grid grid-cols-4 gap-6 items-start">
+            {/* COLUMN 1: Sarah Chen connector + name */}
+            <div className="flex flex-col items-center pt-0">
+              <Connector author="Sarah chen" position="top" />
+            </div>
 
-      <TestimonialCard
-        text={testimonials[0].text}
-        color="red"
-        className="mt-4 ml-[42%] w-[16rem] xl:w-[17rem]"
-      />
-    </div>
+            {/* COLUMN 2: Sarah's red card */}
+            <div className="flex flex-col items-center pt-0">
+              <TestimonialCard
+                text={testimonials[0].text}
+                color="red"
+              />
+            </div>
 
-    {/* David Kross */}
-    <div className="flex flex-col items-center">
-      <Connector author="David Kross" position="top" />
-    </div>
+            {/* COLUMN 3: David Kross connector + name */}
+            <div className="flex flex-col items-center pt-0">
+              <Connector author="David Kross" position="top" />
+            </div>
 
-    {/* Red Card Right */}
-    <div className="flex justify-end">
-      <TestimonialCard
-        text={testimonials[1].text}
-        color="red"
-        className="mt-[3.5rem] w-[16rem] xl:w-[17rem]"
-      />
-    </div>
-  </div>
-
-  {/* ================= BOTTOM ROW ================= */}
-  <div className="absolute inset-x-0 bottom-0 grid grid-cols-3 items-end">
-    {/* Green Card Left */}
-    <div className="flex items-start">
-      <TestimonialCard
-        text={testimonials[2].text}
-        color="green"
-        className="w-[17rem] xl:w-[18rem]"
-      />
-    </div>
-
-    {/* Marcus Vance */}
-    <div className="flex justify-start">
-      <div className="ml-[5%]">
-        <Connector author="Marcus Vance" position="bottom" />
-      </div>
-    </div>
-
-    {/* Green Card + Suvendu */}
-    <div className="relative flex justify-center">
-      <TestimonialCard
-        text={testimonials[3].text}
-        color="green"
-        className="w-[17rem] xl:w-[18rem]"
-      />
-
-      <div className="absolute left-full ml-12 top-8">
-        <Connector author="suvendu adhikary" position="bottom" />
-      </div>
-    </div>
-  </div>
-</div>
-
-        {/* Tablet Layout */}
-        <div className="hidden md:grid lg:hidden grid-cols-2 gap-10 relative">
-          <div className="absolute top-1/2 left-0 right-0 border-t border-dashed border-white/20 -translate-y-1/2" />
-
-          <div className="relative z-10">
-            <Connector author="Sarah chen" position="top" />
-            <TestimonialCard
-              text={testimonials[0].text}
-              color="red"
-              className="mt-4"
-            />
+            {/* COLUMN 4: David's red card */}
+            <div className="flex flex-col items-center pt-0">
+              <TestimonialCard
+                text={testimonials[1].text}
+                color="red"
+              />
+            </div>
           </div>
 
-          <div className="relative z-10">
-            <Connector author="David Kross" position="top" />
-            <TestimonialCard
-              text={testimonials[1].text}
-              color="red"
-              className="mt-4"
-            />
-          </div>
+          {/* BOTTOM ROW - inverted order */}
+          <div className="grid grid-cols-4 gap-6 items-end mt-32">
+            {/* COLUMN 1: Marcus Vance's green card */}
+            <div className="flex flex-col items-center pb-0">
+              <TestimonialCard
+                text={testimonials[2].text}
+                color="green"
+              />
+            </div>
 
-          <div className="relative z-10">
-            <TestimonialCard
-              text={testimonials[2].text}
-              color="green"
-              className="mb-4"
-            />
-            <Connector author="Marcus Vance" position="bottom" />
-          </div>
+            {/* COLUMN 2: Marcus Vance connector + name */}
+            <div className="flex flex-col items-center pb-0">
+              <Connector author="Marcus Vance" position="bottom" />
+            </div>
 
-          <div className="relative z-10">
-            <TestimonialCard
-              text={testimonials[3].text}
-              color="green"
-              className="mb-4"
-            />
-            <Connector author="suvendu adhikary" position="bottom" />
+            {/* COLUMN 3: Suvendu's green card */}
+            <div className="flex flex-col items-center pb-0">
+              <TestimonialCard
+                text={testimonials[3].text}
+                color="green"
+              />
+            </div>
+
+            {/* COLUMN 4: Suvendu connector + name */}
+            <div className="flex flex-col items-center pb-0">
+              <Connector author="suvendu adhikary" position="bottom" />
+            </div>
           </div>
         </div>
 
-        {/* Mobile Layout */}
+        {/* ============ TABLET LAYOUT (768px-1023px) ============ */}
+        <div className="hidden md:block lg:hidden relative" style={{ minHeight: "500px" }}>
+          {/* Horizontal dashed divider */}
+          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 border-t border-dashed border-white/20" />
+
+          {/* Top row: 2 columns */}
+          <div className="grid grid-cols-2 gap-6 mb-20">
+            <div className="flex flex-col items-center pt-0">
+              <Connector author="Sarah chen" position="top" />
+              <TestimonialCard
+                text={testimonials[0].text}
+                color="red"
+                className="mt-4"
+              />
+            </div>
+
+            <div className="flex flex-col items-center pt-0">
+              <Connector author="David Kross" position="top" />
+              <TestimonialCard
+                text={testimonials[1].text}
+                color="red"
+                className="mt-4"
+              />
+            </div>
+          </div>
+
+          {/* Bottom row: 2 columns */}
+          <div className="grid grid-cols-2 gap-6 mt-20">
+            <div className="flex flex-col items-center pb-0">
+              <TestimonialCard
+                text={testimonials[2].text}
+                color="green"
+                className="mb-4"
+              />
+              <Connector author="Marcus Vance" position="bottom" />
+            </div>
+
+            <div className="flex flex-col items-center pb-0">
+              <TestimonialCard
+                text={testimonials[3].text}
+                color="green"
+                className="mb-4"
+              />
+              <Connector author="suvendu adhikary" position="bottom" />
+            </div>
+          </div>
+        </div>
+
+        {/* ============ MOBILE LAYOUT (<768px) ============ */}
         <div className="md:hidden relative flex flex-col gap-8">
           {/* Vertical dashed line */}
           <div className="absolute top-0 bottom-0 left-[11px] border-l border-dashed border-white/20" />
