@@ -72,7 +72,7 @@ export default function Hero() {
               {/* Dashboard content area */}
               <div className="relative h-64 sm:h-80 overflow-hidden bg-gradient-to-br from-white/5 to-white/2">
                 <Image
-                  src="/images/dashboard.png"
+                  src="/images/bg-hero.png"
                   alt="Quantsuite Trading Dashboard"
                   width={1200}
                   height={800}

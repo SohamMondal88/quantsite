@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Testimonials from "./components/Testimonials";
-import TrustedBy from "./components/TrustedBy";
+
 import Footer from "./components/Footer";
 import DecorativeBg from "./components/DecorativeBg";
 import GridOverlay from "./components/GridOverlay";
@@ -20,7 +20,7 @@ export default function Home() {
         <Features />
         <SectionDivider label="Community" />
         <Testimonials />
-        <TrustedBy />
+
       </main>
       <Footer />
     </div>
