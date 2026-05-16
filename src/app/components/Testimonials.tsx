@@ -1,169 +1,224 @@
-const topTestimonials = [
+const testimonials = [
   {
     text: "The walk Forward engine saved us from a disastrous overfitting loop in our volatility strategies. Pure institutional grade.",
     author: "Sarah chen",
-    offset: "ml-[20%]",
-    nameOffset: "left-[15%]",
+    color: "red",
+    position: "top-left",
   },
   {
     text: "Realtime regime detection kept us ahead of market shifts tight, precise, and reliable.",
     author: "David Kross",
-    offset: "ml-[25%]",
-    nameOffset: "left-[20%]",
+    color: "red",
+    position: "top-right",
   },
-];
-
-const bottomTestimonials = [
   {
     text: "Quantsuite's SwarmEngine detected the oil supply squeeze 48 hours before the headlines hit. It's an indispensable edge.",
     author: "Marcus Vance",
-    offset: "mr-[15%]",
-    nameOffset: "left-[25%]",
+    color: "green",
+    position: "bottom-left",
   },
   {
     text: "A masterclass in UI and data density. Having Black Scholes and Heston models side by side with AI signals is a game changer.",
     author: "suvendu adhikary",
-    offset: "mr-[10%]",
-    nameOffset: "left-[30%]",
+    color: "green",
+    position: "bottom-right",
   },
 ];
 
-function NameConnector({ name, position }: { name: string; position: "above" | "below" }) {
+function TestimonialCard({
+  text,
+  color,
+  className = "",
+}: {
+  text: string;
+  color: "red" | "green";
+  className?: string;
+}) {
+  const bg =
+    color === "red"
+      ? "linear-gradient(135deg, rgba(214, 92, 92, 0.92) 0%, rgba(173, 67, 67, 0.95) 100%)"
+      : "linear-gradient(135deg, rgba(65, 185, 130, 0.92) 0%, rgba(41, 145, 98, 0.96) 100%)";
+
   return (
-    <div className={`flex flex-col items-center ${position === "above" ? "" : "mt-3"}`}>
-      {position === "above" && (
-        <>
-          <span className="font-sans text-[13px] sm:text-[14px] text-white/50 mb-2">{name}</span>
-          <div className="w-px h-8 sm:h-10 bg-white/25 relative">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-accent-cyan" />
-          </div>
-        </>
-      )}
-      {position === "below" && (
-        <>
-          <div className="w-px h-8 sm:h-10 bg-white/25 relative">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-accent-cyan" />
-          </div>
-          <span className="font-sans text-[13px] sm:text-[14px] text-white/50 mt-2">{name}</span>
-        </>
-      )}
+    <div
+      className={`max-w-[280px] p-4 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm ${className}`}
+      style={{
+        background: bg,
+        border: "1px solid rgba(255,255,255,0.08)",
+      }}
+    >
+      <p className="font-sans text-[12px] leading-[1.65] text-white/95">
+        {text}
+      </p>
     </div>
   );
 }
 
-function RedCard({ text, className = "" }: { text: string; className?: string }) {
+function Connector({
+  author,
+  position,
+}: {
+  author: string;
+  position: "top" | "bottom";
+}) {
   return (
-    <div
-      className={`p-4 sm:p-5 rounded-[14px] sm:rounded-[16px] ${className}`}
-      style={{
-        background: "linear-gradient(135deg, rgba(210, 75, 75, 0.9) 0%, rgba(170, 55, 55, 0.95) 100%)",
-        border: "1px solid rgba(255,255,255,0.08)",
-      }}
-    >
-      <p className="font-sans text-[12px] sm:text-[13px] text-white/95 leading-[1.6]">{text}</p>
-    </div>
-  );
-}
+    <div className="flex flex-col items-center">
+      {position === "top" ? (
+        <>
+          <span className="font-sans text-[14px] font-light text-white/45 mb-2">
+            {author}
+          </span>
 
-function GreenCard({ text, className = "" }: { text: string; className?: string }) {
-  return (
-    <div
-      className={`p-4 sm:p-5 rounded-[14px] sm:rounded-[16px] ${className}`}
-      style={{
-        background: "linear-gradient(135deg, rgba(55, 165, 110, 0.9) 0%, rgba(35, 130, 85, 0.95) 100%)",
-        border: "1px solid rgba(255,255,255,0.08)",
-      }}
-    >
-      <p className="font-sans text-[12px] sm:text-[13px] text-white/95 leading-[1.6]">{text}</p>
+          <div className="relative w-px h-12 bg-emerald-400/60">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.7)] border border-emerald-300/40" />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="relative w-px h-12 bg-emerald-400/60">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.7)] border border-emerald-300/40" />
+          </div>
+
+          <span className="font-sans text-[14px] font-light text-white/45 mt-2">
+            {author}
+          </span>
+        </>
+      )}
     </div>
   );
 }
 
 export default function Testimonials() {
   return (
-    <section className="w-full px-5 sm:px-8 lg:px-16 py-16 sm:py-20 lg:py-24">
-      <div className="max-w-[1100px] mx-auto">
-        {/* Section title */}
-        <h2 className="font-serif text-[32px] sm:text-[48px] md:text-[64px] lg:text-[80px] text-white text-center mb-16 sm:mb-20 lg:mb-24 animate-fadeInUp">
-          Trusted by the{" "}
-          <span className="italic">best</span>
+    <section className="relative w-full overflow-hidden py-24 px-6 lg:px-12">
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(255,255,255,0.04),transparent_55%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01),transparent_20%,transparent_80%,rgba(255,255,255,0.01))] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto">
+        {/* Heading */}
+        <h2 className="font-serif text-center text-white text-[48px] md:text-[72px] lg:text-[84px] font-light tracking-tight mb-24">
+          Trusted by the <span className="italic">best</span>
         </h2>
 
-        {/* ============ DESKTOP (lg+) ============ */}
-        <div className="hidden lg:block">
-          {/* TOP ROW: Names + connectors + Red cards */}
-          <div className="flex justify-between px-4">
-            <div className="w-[48%]">
-              <NameConnector name="Sarah chen" position="above" />
-              <RedCard text={topTestimonials[0].text} className="mt-3 ml-[15%]" />
+        {/* Desktop Layout */}
+        <div className="hidden lg:block relative">
+          {/* Top row */}
+          <div className="grid grid-cols-2 gap-24 mb-10">
+            {/* Left Top */}
+            <div className="flex flex-col items-start">
+              <div className="ml-8">
+                <Connector author="Sarah chen" position="top" />
+              </div>
+              <TestimonialCard
+                text={testimonials[0].text}
+                color="red"
+                className="mt-4 ml-32"
+              />
             </div>
-            <div className="w-[48%]">
-              <NameConnector name="David Kross" position="above" />
-              <RedCard text={topTestimonials[1].text} className="mt-3 ml-[20%]" />
+
+            {/* Right Top */}
+            <div className="flex flex-col items-start">
+              <div className="ml-28">
+                <Connector author="David Kross" position="top" />
+              </div>
+              <TestimonialCard
+                text={testimonials[1].text}
+                color="red"
+                className="mt-4 ml-56"
+              />
             </div>
           </div>
 
-          {/* Dashed divider */}
-          <div className="my-8 border-t border-dashed border-white/20" />
+          {/* Dashed center line */}
+          <div className="border-t border-dashed border-white/20 my-8" />
 
-          {/* BOTTOM ROW: Green cards + connectors + Names */}
-          <div className="flex justify-between px-4">
-            <div className="w-[48%]">
-              <GreenCard text={bottomTestimonials[0].text} className="mb-3 mr-[10%]" />
-              <NameConnector name="Marcus Vance" position="below" />
+          {/* Bottom row */}
+          <div className="grid grid-cols-2 gap-24 mt-10">
+            {/* Left Bottom */}
+            <div className="flex flex-col items-start">
+              <TestimonialCard
+                text={testimonials[2].text}
+                color="green"
+                className="mb-4"
+              />
+              <div className="ml-44">
+                <Connector author="Marcus Vance" position="bottom" />
+              </div>
             </div>
-            <div className="w-[48%]">
-              <GreenCard text={bottomTestimonials[1].text} className="mb-3 mr-[5%]" />
-              <NameConnector name="suvendu adhikary" position="below" />
+
+            {/* Right Bottom */}
+            <div className="flex flex-col items-start">
+              <TestimonialCard
+                text={testimonials[3].text}
+                color="green"
+                className="mb-4 ml-12"
+              />
+              <div className="ml-64">
+                <Connector author="suvendu adhikary" position="bottom" />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ============ TABLET (md) ============ */}
-        <div className="hidden md:grid lg:hidden grid-cols-2 gap-x-8 gap-y-12 relative">
-          {/* Horizontal dashed line */}
-          <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 border-t border-dashed border-white/20 pointer-events-none" />
+        {/* Tablet Layout */}
+        <div className="hidden md:grid lg:hidden grid-cols-2 gap-10 relative">
+          <div className="absolute top-1/2 left-0 right-0 border-t border-dashed border-white/20 -translate-y-1/2" />
 
           <div className="relative z-10">
-            <NameConnector name="Sarah chen" position="above" />
-            <RedCard text={topTestimonials[0].text} className="mt-3" />
+            <Connector author="Sarah chen" position="top" />
+            <TestimonialCard
+              text={testimonials[0].text}
+              color="red"
+              className="mt-4"
+            />
           </div>
 
           <div className="relative z-10">
-            <NameConnector name="David Kross" position="above" />
-            <RedCard text={topTestimonials[1].text} className="mt-3" />
+            <Connector author="David Kross" position="top" />
+            <TestimonialCard
+              text={testimonials[1].text}
+              color="red"
+              className="mt-4"
+            />
           </div>
 
           <div className="relative z-10">
-            <GreenCard text={bottomTestimonials[0].text} className="mb-3" />
-            <NameConnector name="Marcus Vance" position="below" />
+            <TestimonialCard
+              text={testimonials[2].text}
+              color="green"
+              className="mb-4"
+            />
+            <Connector author="Marcus Vance" position="bottom" />
           </div>
 
           <div className="relative z-10">
-            <GreenCard text={bottomTestimonials[1].text} className="mb-3" />
-            <NameConnector name="suvendu adhikary" position="below" />
+            <TestimonialCard
+              text={testimonials[3].text}
+              color="green"
+              className="mb-4"
+            />
+            <Connector author="suvendu adhikary" position="bottom" />
           </div>
         </div>
 
-        {/* ============ MOBILE (<md) ============ */}
-        <div className="md:hidden flex flex-col gap-10 relative">
+        {/* Mobile Layout */}
+        <div className="md:hidden relative flex flex-col gap-8">
           {/* Vertical dashed line */}
           <div className="absolute top-0 bottom-0 left-[11px] border-l border-dashed border-white/20" />
 
-          {[
-            ...topTestimonials.map((t) => ({ ...t, type: "red" as const })),
-            ...bottomTestimonials.map((t) => ({ ...t, type: "green" as const })),
-          ].map((t) => (
-            <div key={t.author} className="relative pl-8">
-              <div className="absolute left-[11px] top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-accent-cyan z-10" />
+          {testimonials.map((item) => (
+            <div key={item.author} className="relative pl-8">
+              <div className="absolute left-[11px] top-6 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.7)] z-10" />
 
-              <span className="font-sans text-[12px] text-white/50 block mb-2">{t.author}</span>
+              <span className="block text-white/45 text-[12px] mb-2">
+                {item.author}
+              </span>
 
-              {t.type === "red" ? (
-                <RedCard text={t.text} />
-              ) : (
-                <GreenCard text={t.text} />
-              )}
+              <TestimonialCard
+                text={item.text}
+                color={item.color as "red" | "green"}
+              />
             </div>
           ))}
         </div>
