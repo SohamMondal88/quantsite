@@ -101,65 +101,65 @@ export default function Testimonials() {
           Trusted by the <span className="italic">best</span>
         </h2>
 
-        {/* Desktop Layout */}
-        <div className="hidden lg:block relative">
-          {/* Top row */}
-          <div className="grid grid-cols-2 gap-24 mb-10">
-            {/* Left Top */}
-            <div className="flex flex-col items-start">
-              <div className="ml-8">
-                <Connector author="Sarah chen" position="top" />
-              </div>
-              <TestimonialCard
-                text={testimonials[0].text}
-                color="red"
-                className="mt-4 ml-32"
-              />
-            </div>
+        {/* ============ DESKTOP LAYOUT (PIXEL-PERFECT TO MATCH REFERENCE) ============ */}
+<div className="hidden lg:block relative h-[520px]">
+  {/* Dashed center divider */}
+  <div className="absolute left-0 right-0 top-[230px] border-t border-dashed border-white/20" />
 
-            {/* Right Top */}
-            <div className="flex flex-col items-start">
-              <div className="ml-28">
-                <Connector author="David Kross" position="top" />
-              </div>
-              <TestimonialCard
-                text={testimonials[1].text}
-                color="red"
-                className="mt-4 ml-56"
-              />
-            </div>
-          </div>
+  {/* ================= TOP LEFT ================= */}
+  {/* Sarah chen */}
+  <div className="absolute left-[60px] top-[40px]">
+    <Connector author="Sarah chen" position="top" />
+  </div>
 
-          {/* Dashed center line */}
-          <div className="border-t border-dashed border-white/20 my-8" />
+  {/* Red card 1 */}
+  <TestimonialCard
+    text={testimonials[0].text}
+    color="red"
+    className="absolute left-[200px] top-[95px] w-[260px]"
+  />
 
-          {/* Bottom row */}
-          <div className="grid grid-cols-2 gap-24 mt-10">
-            {/* Left Bottom */}
-            <div className="flex flex-col items-start">
-              <TestimonialCard
-                text={testimonials[2].text}
-                color="green"
-                className="mb-4"
-              />
-              <div className="ml-44">
-                <Connector author="Marcus Vance" position="bottom" />
-              </div>
-            </div>
+  {/* ================= TOP CENTER ================= */}
+  {/* David Kross */}
+  <div className="absolute left-1/2 -translate-x-1/2 top-[40px]">
+    <Connector author="David Kross" position="top" />
+  </div>
 
-            {/* Right Bottom */}
-            <div className="flex flex-col items-start">
-              <TestimonialCard
-                text={testimonials[3].text}
-                color="green"
-                className="mb-4 ml-12"
-              />
-              <div className="ml-64">
-                <Connector author="suvendu adhikary" position="bottom" />
-              </div>
-            </div>
-          </div>
-        </div>
+  {/* ================= TOP RIGHT ================= */}
+  {/* Red card 2 */}
+  <TestimonialCard
+    text={testimonials[1].text}
+    color="red"
+    className="absolute right-[40px] top-[95px] w-[255px]"
+  />
+
+  {/* ================= BOTTOM LEFT ================= */}
+  {/* Green card 1 */}
+  <TestimonialCard
+    text={testimonials[2].text}
+    color="green"
+    className="absolute left-[20px] top-[245px] w-[265px]"
+  />
+
+  {/* Marcus Vance connector */}
+  <div className="absolute left-[280px] top-[270px]">
+    <Connector author="Marcus Vance" position="bottom" />
+  </div>
+
+  {/* ================= BOTTOM CENTER ================= */}
+  {/* Green card 2 */}
+  <TestimonialCard
+    text={testimonials[3].text}
+    color="green"
+    className="absolute left-1/2 -translate-x-[35%] top-[245px] w-[275px]"
+  />
+
+  {/* ================= BOTTOM RIGHT ================= */}
+  {/* Suvendu connector */}
+  <div className="absolute right-[80px] top-[270px]">
+    <Connector author="suvendu adhikary" position="bottom" />
+  </div>
+</div>
 
         {/* Tablet Layout */}
         <div className="hidden md:grid lg:hidden grid-cols-2 gap-10 relative">
