@@ -101,12 +101,12 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                      VISUAL SYSTEM v4.2                          │
+│                      VISUAL SYSTEM v4.2                         │
 ├─────────────────────────────────────────────────────────────────┤
 │  Background:     Deep Space Black    (#050505)                  │
 │  Primary Glow:   Cyan Neon           (#00F0FF)                  │
 │  Success:        Quantum Green       (#3BB078)                  │
-│  Accent:           Electric Purple     (#9D4EDD)                  │
+│  Accent:           Electric Purple     (#9D4EDD)                │
 │  Warning:        Solar Amber         (#FF9E00)                  │
 │  Surface:        Glass morphism with 24px backdrop blur         │
 │  Typography:     Instrument Serif + Red Hat Display + Mono      │
@@ -219,19 +219,19 @@ quantsite/
 <!-- Terminal Dashboard Preview -->
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ ○ ○ ○  quantsuite_dashboard — live              [● LIVE]  │
+│ ○ ○ ○  quantsuite_dashboard — live              [● LIVE]    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
-│   │ Alpha Flow   │  │ Regime Map   │  │ Risk Surface │   │
-│   │ ████████░░   │  │ ██████░░░░   │  │ █████░░░░░   │   │
-│   │ 24,891 sigs  │  │ 7 regimes    │  │ 0.94 Sharpe  │   │
-│   └──────────────┘  └──────────────┘  └──────────────┘   │
+│   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│   │ Alpha Flow   │  │ Regime Map   │  │ Risk Surface │      │
+│   │ ████████░░   │  │ ██████░░░░   │  │ █████░░░░░   │      │
+│   │ 24,891 sigs  │  │ 7 regimes    │  │ 0.94 Sharpe  │      │
+│   └──────────────┘  └──────────────┘  └──────────────┘      │
 │                                                             │
-│   ┌─────────────────────────────────────────────────────┐ │
-│   │ SwarmEngine Activity:  ████████████████████████░░░  │ │
-│   │ Agents Active: 2,437  |  Latency: 12ms  |  Win: 68% │ │
-│   └─────────────────────────────────────────────────────┘ │
+│   ┌─────────────────────────────────────────────────────┐   │
+│   │ SwarmEngine Activity:  ████████████████████████░░░  │   │
+│   │ Agents Active: 2,437  |  Latency: 12ms  |  Win: 68% │   │
+│   └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -272,7 +272,7 @@ quantsite/
   <img src="https://img.shields.io/badge/License-Proprietary-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=00F0FF" />
 </p>
 
-© 2024 Quantsuite. All rights reserved.
+© 2026 Quantsuite. All rights reserved.
 
 ---
 
