@@ -101,63 +101,71 @@ export default function Testimonials() {
           Trusted by the <span className="italic">best</span>
         </h2>
 
-        {/* ============ DESKTOP LAYOUT (PIXEL-PERFECT TO MATCH REFERENCE) ============ */}
-<div className="hidden lg:block relative h-[520px]">
-  {/* Dashed center divider */}
-  <div className="absolute left-0 right-0 top-[230px] border-t border-dashed border-white/20" />
+{/* ============ DESKTOP LAYOUT (RESPONSIVE + PERFECTLY ALIGNED) ============ */}
+<div className="hidden lg:block relative h-[34rem] xl:h-[36rem]">
+  {/* Center dashed divider */}
+  <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 border-t border-dashed border-white/20" />
 
-  {/* ================= TOP LEFT ================= */}
-  {/* Sarah chen */}
-  <div className="absolute left-[60px] top-[40px]">
-    <Connector author="Sarah chen" position="top" />
+  {/* ================= TOP ROW ================= */}
+  <div className="absolute inset-x-0 top-0 grid grid-cols-3 items-start">
+    {/* Sarah chen */}
+    <div className="flex flex-col items-start">
+      <div className="ml-[18%]">
+        <Connector author="Sarah chen" position="top" />
+      </div>
+
+      <TestimonialCard
+        text={testimonials[0].text}
+        color="red"
+        className="mt-4 ml-[42%] w-[16rem] xl:w-[17rem]"
+      />
+    </div>
+
+    {/* David Kross */}
+    <div className="flex flex-col items-center">
+      <Connector author="David Kross" position="top" />
+    </div>
+
+    {/* Red Card Right */}
+    <div className="flex justify-end">
+      <TestimonialCard
+        text={testimonials[1].text}
+        color="red"
+        className="mt-[3.5rem] w-[16rem] xl:w-[17rem]"
+      />
+    </div>
   </div>
 
-  {/* Red card 1 */}
-  <TestimonialCard
-    text={testimonials[0].text}
-    color="red"
-    className="absolute left-[200px] top-[95px] w-[260px]"
-  />
+  {/* ================= BOTTOM ROW ================= */}
+  <div className="absolute inset-x-0 bottom-0 grid grid-cols-3 items-end">
+    {/* Green Card Left */}
+    <div className="flex items-start">
+      <TestimonialCard
+        text={testimonials[2].text}
+        color="green"
+        className="w-[17rem] xl:w-[18rem]"
+      />
+    </div>
 
-  {/* ================= TOP CENTER ================= */}
-  {/* David Kross */}
-  <div className="absolute left-1/2 -translate-x-1/2 top-[40px]">
-    <Connector author="David Kross" position="top" />
-  </div>
+    {/* Marcus Vance */}
+    <div className="flex justify-start">
+      <div className="ml-[5%]">
+        <Connector author="Marcus Vance" position="bottom" />
+      </div>
+    </div>
 
-  {/* ================= TOP RIGHT ================= */}
-  {/* Red card 2 */}
-  <TestimonialCard
-    text={testimonials[1].text}
-    color="red"
-    className="absolute right-[40px] top-[95px] w-[255px]"
-  />
+    {/* Green Card + Suvendu */}
+    <div className="relative flex justify-center">
+      <TestimonialCard
+        text={testimonials[3].text}
+        color="green"
+        className="w-[17rem] xl:w-[18rem]"
+      />
 
-  {/* ================= BOTTOM LEFT ================= */}
-  {/* Green card 1 */}
-  <TestimonialCard
-    text={testimonials[2].text}
-    color="green"
-    className="absolute left-[20px] top-[245px] w-[265px]"
-  />
-
-  {/* Marcus Vance connector */}
-  <div className="absolute left-[280px] top-[270px]">
-    <Connector author="Marcus Vance" position="bottom" />
-  </div>
-
-  {/* ================= BOTTOM CENTER ================= */}
-  {/* Green card 2 */}
-  <TestimonialCard
-    text={testimonials[3].text}
-    color="green"
-    className="absolute left-1/2 -translate-x-[35%] top-[245px] w-[275px]"
-  />
-
-  {/* ================= BOTTOM RIGHT ================= */}
-  {/* Suvendu connector */}
-  <div className="absolute right-[80px] top-[270px]">
-    <Connector author="suvendu adhikary" position="bottom" />
+      <div className="absolute left-full ml-12 top-8">
+        <Connector author="suvendu adhikary" position="bottom" />
+      </div>
+    </div>
   </div>
 </div>
 
