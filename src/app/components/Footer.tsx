@@ -33,38 +33,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full px-5 sm:px-8 lg:px-16 pt-16 sm:pt-20 lg:pt-28 pb-8 sm:pb-10">
-      {/* Newsletter CTA */}
-      <div className="max-w-[1200px] mx-auto mb-16 sm:mb-20">
-        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden p-6 sm:p-10 lg:p-14 border border-border-subtle">
-          {/* Background glow */}
-          <div className="absolute inset-0 gradient-mesh opacity-50" />
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent-cyan/5 to-transparent" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
-            <div>
-              <h3 className="font-serif text-[24px] sm:text-[32px] md:text-[40px] text-white mb-2 sm:mb-3 leading-tight">
-                Join the alpha revolution
-              </h3>
-              <p className="font-sans text-[13px] sm:text-[14px] md:text-[15px] text-text-secondary max-w-md">
-                Get early access to new features, research, and community insights.
-              </p>
-            </div>
-
-            <div className="flex gap-2.5 sm:gap-3 w-full lg:w-auto">
-              <input
-                type="email"
-                placeholder="quant@hedge.fund"
-                className="flex-1 lg:w-64 px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl bg-white/5 border border-border-medium text-white text-[13px] sm:text-[14px] placeholder:text-text-muted focus:outline-none focus:border-accent-cyan/40 transition-colors"
-              />
-              <button className="px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl font-sans font-semibold text-[13px] sm:text-[14px] text-[#050505] shrink-0 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,240,255,0.2)] hover:-translate-y-0.5"
-                style={{ background: "linear-gradient(135deg, #00f0ff 0%, #3bb078 100%)" }}
-              >
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Links grid */}
       <div className="max-w-[1200px] mx-auto">
